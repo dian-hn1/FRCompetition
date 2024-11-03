@@ -18,12 +18,16 @@ from serial.tools import list_ports
 import serial
 import time
 
-j3_auto_weight = [-49.458, -55.125, -124.682, -180.193, -49.458, 0.000]# 这个是机械臂复位的J
+j3_auto_weight = [-49.458, -55.125, -124.682, -180.193, -49.458, 0.000] # 这个是机械臂复位的J
 eP1=[0.000,0.000,0.000,0.000]
 dP1=[1.000,1.000,1.000,1.000,1.000,1.000]
 oP1=[0.000,0.000,0.000,0.000,0.000,0.000]
+
 class fr5robot:
     def __init__(self, index=1):
+        '''
+        初始化fr5robot类，设置机械臂的初始状态和ROS节点
+        '''
         # Initialize the ROS node
 
         # 初始化变量
@@ -50,31 +54,34 @@ class fr5robot:
         self.pub_gripper1 = rospy.Publisher('pub_gripper1', Int32, queue_size=0)
         self.pub_gripper2 = rospy.Publisher('pub_gripper2', Int32, queue_size=0)
 
-    def MoveGripper(self,index,pos,speed,force,maxtime,block):
+    def MoveGripper(self, index, pos, speed, force, maxtime, block):
         '''
-        index:夹爪编号；
-        pos:位置百分比，范围[0~100]；
-        speed:速度百分比，范围[0~100];
-        force:力矩百分比，范围[0~100]；
-        maxtime:最大等待时间，范围[0~30000]，单位[ms]；
-        block:0-阻塞，1-非阻塞。
+        控制夹爪的移动
+        index: 夹爪编号
+        pos: 位置百分比，范围[0~100]
+        speed: 速度百分比，范围[0~100]
+        force: 力矩百分比，范围[0~100]
+        maxtime: 最大等待时间，范围[0~30000]，单位[ms]
+        block: 0-阻塞，1-非阻塞
         '''
         if self.index == 1:
-            self.robot.MoveGripper(index,pos,speed,force,maxtime,block)
+            self.robot.MoveGripper(index, pos, speed, force, maxtime, block)
             gripper_pos = Int32()
             gripper_pos.data = pos
             self.pub_gripper2.publish(gripper_pos)
         elif self.index == 2:
-            self.robot.MoveGripper(index,pos,speed,force,maxtime,block)
+            self.robot.MoveGripper(index, pos, speed, force, maxtime, block)
             gripper_pos = Int32()
             gripper_pos.data = pos
             self.pub_gripper1.publish(gripper_pos)
-        else :
+        else:
             exit()
 
-    def Go_to_start_zone(self,v = 30.0, open = 1):
+    def Go_to_start_zone(self, v=30.0, open=1):
         '''
-            机械臂复位
+        机械臂复位
+        v: 速度
+        open: 是否打开夹爪
         '''
         self.point_safe_move([0.0, -250.0, 400.0, 90.0, 0.0, 0.0], v, 200.0)
         if open:
@@ -82,7 +89,9 @@ class fr5robot:
 
     def dou_go_start(self, fr5_B, v=50.0):
         '''
-            两个机械臂同时复位
+        两个机械臂同时复位
+        fr5_B: 另一个机械臂对象
+        v: 速度
         '''
         self.Go_to_start_zone(v)
         time.sleep(1)
@@ -90,14 +99,16 @@ class fr5robot:
 
     def MoveL(self, x=0.000, y=0.000, z=0.000, movespeed=100.0):
         '''
-            机械臂直线运动
+        机械臂直线运动
+        x, y, z: 目标位置的坐标
+        movespeed: 运动速度
         '''
         eP1 = [0.000, 0.000, 0.000, 0.000]
         dP1 = [x, y, z, 0.000, 0.000, 0.000]
         pos_now = self.robot.GetActualToolFlangePose(0)
         # print('pos_now:',pos_now)
 
-        while( type(pos_now) != tuple):
+        while(type(pos_now) != tuple):
             pos_now = self.robot.GetActualToolFlangePose(0)
             time.sleep(0.5)
         pos_now = pos_now[1]
@@ -109,19 +120,22 @@ class fr5robot:
             pos_now,
             0,
             0,
-            blendR = -1.0,
+            blendR=-1.0,
         )
         # print('cuowuma',ret)
 
-    def point_safe_move(self, start_catch_position, v=60.0, height=250.0, last_v = 0):  
+    def point_safe_move(self, start_catch_position, v=60.0, height=250.0, last_v=0):
         '''
-            机械臂安全运动到指定位置
+        机械臂安全运动到指定位置
+        start_catch_position: 起始位置
+        v: 速度
+        height: 高度
+        last_v: 最后阶段的速度
         '''
-
         end_height_from_sdk = self.robot.GetActualToolFlangePose(0)
         # print(type(end_height_from_sdk) )
         # 如果查询失败的话，重新查询
-        while( type(end_height_from_sdk) != tuple):
+        while(type(end_height_from_sdk) != tuple):
             end_height_from_sdk = self.robot.GetActualToolFlangePose(0)
             print('when executing point_safe_move,failed to get end_height_from_sdk1')
             time.sleep(0.5)
@@ -130,13 +144,13 @@ class fr5robot:
             end_height = end_height_from_sdk[1]
         if end_height[2] < height:
             # pass
-            self.MoveL(0.0, 0.0, (max(height, start_catch_position[2]) - end_height[2] ), v)
+            self.MoveL(0.0, 0.0, (max(height, start_catch_position[2]) - end_height[2]), v)
         time.sleep(1)
         middle_pos = copy.deepcopy(start_catch_position)
 
         end_height_from_sdk = self.robot.GetActualToolFlangePose(0)
         # 如果查询失败的话，重新查询
-        while( type(end_height_from_sdk) != tuple):
+        while(type(end_height_from_sdk) != tuple):
             end_height_from_sdk = self.robot.GetActualToolFlangePose(0)
             print('when executing point_safe_move,failed to get end_height_from_sdk2')
             time.sleep(0.5)
@@ -144,24 +158,24 @@ class fr5robot:
         if len(end_height_from_sdk) == 2:
             end_height = end_height_from_sdk[1]
         if (
-            end_height[2]  < height
+            end_height[2] < height
             and start_catch_position[2] < height
         ):
             middle_pos[2] = height
         else:
-            middle_pos[2] = max(end_height[2] , start_catch_position[2])
+            middle_pos[2] = max(end_height[2], start_catch_position[2])
         p3_auto_weight = self.robot.GetForwardKin(j3_auto_weight)
-        while( type(p3_auto_weight) != tuple):
-                p3_auto_weight = self.robot.GetForwardKin(j3_auto_weight)
-                time.sleep(0.1)
+        while(type(p3_auto_weight) != tuple):
+            p3_auto_weight = self.robot.GetForwardKin(j3_auto_weight)
+            time.sleep(0.1)
         p3_auto_weight = p3_auto_weight[1]
-        self.robot.MoveJ(j3_auto_weight,0,0,p3_auto_weight,20.0,0,100.0,eP1,-1.0,0,oP1)
+        self.robot.MoveJ(j3_auto_weight, 0, 0, p3_auto_weight, 20.0, 0, 100.0, eP1, -1.0, 0, oP1)
         # self.robot.MoveCart(middle_pos, 0, 0)
 
         time.sleep(1)
         end_height_from_sdk = self.robot.GetActualToolFlangePose(0)
         # 如果查询失败的话，重新查询
-        while( type(end_height_from_sdk) != tuple):
+        while(type(end_height_from_sdk) != tuple):
             end_height_from_sdk = self.robot.GetActualToolFlangePose(0)
             print('when executing point_safe_move,failed to get end_height_from_sdk3')
             time.sleep(0.5)
@@ -170,14 +184,20 @@ class fr5robot:
             end_height = end_height_from_sdk[1]
         if last_v == 0:
             self.MoveL(
-                0.0, 0.0, (start_catch_position[2] - end_height[2] ), v
-        )
+                0.0, 0.0, (start_catch_position[2] - end_height[2]), v
+            )
         else:
             self.MoveL(
-                0.0, 0.0, (start_catch_position[2] - end_height[2] ), last_v
-        )
+                0.0, 0.0, (start_catch_position[2] - end_height[2]), last_v
+            )
 
     def Safe_move(self, start_catch_position, dir, v=30.0):
+        '''
+        机械臂安全移动到指定位置
+        start_catch_position: 起始位置
+        dir: 方向
+        v: 速度
+        '''
         temp_path = []
         start_interpolation_path = []
         # get end pos
@@ -279,8 +299,18 @@ class fr5robot:
                 start_interpolation_path[i], 0, 0, 0.0, 0.0, v, -1.0, -1
             )
 
-    # 参数为容器半径，容器上平面离夹爪中心高度，角度增量及方向，指令周期，最大旋转角度
-    def pour(self, r, h, i=-2, max_angel=90, rate = 100.0, v = 70.0, upright = 1, shake = 1):
+    def pour(self, r, h, i=-2, max_angel=90, rate=100.0, v=70.0, upright=1, shake=1):
+        '''
+        倾倒液体
+        r: 容器半径
+        h: 容器上平面离夹爪中心高度
+        i: 角度增量及方向
+        max_angel: 最大旋转角度
+        rate: 指令周期
+        v: 速度
+        upright: 是否需要上抬以规避倾倒仪器回归水平位时的碰撞
+        shake: 是否需要摇晃
+        '''
         rate /= 100
         types = {
             "100ml": {"diameter": 10, "height": 20},
@@ -288,19 +318,19 @@ class fr5robot:
             "250ml": {"diameter": 12, "height": 22},
         }
         # 伺服运动参数预置
-        t=0.002
+        t = 0.002
         eP0 = [0.000, 0.000, 0.000, 0.000]
         dP0 = [1.000, 1.000, 1.000, 1.000, 1.000, 1.000]
         gain = [1.0, 1.0, 0.0, 0.0, 0.0, 0.0]  # 位姿增量比例系数，仅在增量运动下生效，范围[0~1]
         
         P1 = self.robot.GetActualTCPPose(0)
         J1 = self.robot.GetActualJointPosDegree(0)
-        while( type(P1) != tuple):
+        while(type(P1) != tuple):
             P1 = self.robot.GetActualToolFlangePose(0)
             print('when executing pouring,failed to get P1 from sdk')
             time.sleep(0.5)
         P1 = P1[1]
-        while( type(J1) != tuple):
+        while(type(J1) != tuple):
             J1 = self.robot.GetActualJointPosDegree(0)
             print('when executing pouring,failed to get J1 from sdk')
             time.sleep(0.5)
@@ -328,7 +358,7 @@ class fr5robot:
             self.robot.ServoCart(2, n_pos, gain, 0.0, 0.0, t, 0.0, 0.0)  # 工具笛卡尔坐标增量移动
 
             joint_pos = self.robot.GetActualJointPosDegree(0)
-            while( type(joint_pos) != tuple):
+            while(type(joint_pos) != tuple):
                 joint_pos = self.robot.GetActualJointPosDegree(0)
                 print('when executing pouring,failed to get end_height_from_sdk2')
                 time.sleep(0.5)
@@ -343,49 +373,19 @@ class fr5robot:
             joint_pos_difference = joint_pos[5] - J1[5]
 
         joint_pos = self.robot.GetActualJointPosDegree(0)
-        while( type(joint_pos) != tuple):
+        while(type(joint_pos) != tuple):
             joint_pos = self.robot.GetActualJointPosDegree(0)
             print('when executing pouring,failed to get end_height_from_sdk2')
             time.sleep(0.5)
         joint_pos = joint_pos[1]
         pos_record = self.robot.GetActualTCPPose(0)
-        while( type(pos_record) != tuple):
+        while(type(pos_record) != tuple):
             pos_record = self.robot.GetActualTCPPose(0)
-            print('when executing pouring,failed to get pos record')
-            time.sleep(0.5)
-        pos_record = pos_record[1]
-        max_angel = joint_pos[5] + 6.0
-        min_angel = joint_pos[5] - 6.0
-        shakes = 0
-        if shake == 1:
-            while shakes < 200:
-                self.robot.ServoJ(joint_pos, 0.0, 0.0, t, 0.0, 0.0)
-                if joint_pos[5] > max_angel:
-                    i = -1
-                if joint_pos[5] < min_angel:
-                    i = 1
-                joint_pos[5] += i
-
-                time.sleep(0.002)
-                shakes += 1
-            self.robot.MoveCart(pos_record, 0, 0, 0.0, 0.0, v, -1.0, -1)
-            
-        # 回到倾倒起点，有些场景下可能需要，暂时保留
-        # self.MoveL(0.0, 0.0, (300 - self.robot.GetActualTCPPose(0)[3]), 50.0)
-        # time.sleep(0.5)
-        
-        # 是否需要上抬以规避倾倒仪器回归水平位时的碰撞
-        if upright == 0:
-            return
+            P1 = P1[0:3]
+            P1 += [90.0, 0.0, -90.0]
         else:
-            P1 = self.robot.GetActualTCPPose(0)[1]
-            P1[2] += 60.0
-            if np.abs(P1[5]) > 80.0 and np.abs(P1[5]) < 170.0:
-                P1 = P1[0:3]
-                P1 += [90.0, 0.0, -90.0]
-            else:
-                P1 = P1[0:3]
-                P1 += [90.0, 0.0, 0.0]
+            P1 = P1[0:3]
+            P1 += [90.0, 0.0, 0.0]
             self.robot.MoveCart(P1, 0, 0, 0.0, 0.0, v, -1.0, -1)
     
     #  蠕动泵控制 on = 0 关闭蠕动泵 on = 1 开启蠕动泵; block = 0 非阻塞 block = 1 阻塞

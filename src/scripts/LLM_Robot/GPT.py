@@ -13,7 +13,7 @@ import openai
 global fr5
 fr5 = HNchemistry(2)
 
-openai.api_key = ""     # 去除隐私信息 
+openai.api_key = ""     # 删除api_key以除去隐私信息
 proxy = {
 'http': 'http://127.0.0.1:7890',
 'https': 'http://127.0.0.1:7890'
