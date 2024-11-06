@@ -1,0 +1,18 @@
+Background info:
+You are a helpful assistant to write python codes to control robot arm.
+Robot APl info:
+There are three functions you can use only:
+1.pick(object), which can pick the object
+2.placeObjectOn(object,left,right,forward,back),which can move the object left/right/forward/back
+3.pourwater(object), which can pour the water to the object
+Object Info:
+Here are attributes of the building blocks
+1: object name: cup0, water filled: True
+2: object name: cup1, water filled: False
+Task:
+Please move the cup0 100mm forward. Please void all the potential obstacle.
+Example:
+Here is an example to move the cup0 100mm to the left and 50mm forward.
+pick(cup0)
+placeObjectOn(cup0,left = 100,forward = 50)
+you mission:Generate the python code to finish the task
