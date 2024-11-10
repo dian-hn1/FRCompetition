@@ -1,9 +1,0 @@
-train: ./data/train/images
-val: ./data/val/images
-test: ./data/test/images
-
-# 类别数
-nc: 3
-
-# 类别名称
-names: ['sanjing','shaobei','shiguan']

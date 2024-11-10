@@ -54,13 +54,13 @@ def placeObjectOn(object,left=0,right=0,forward=0,back=0,sel_num=1):
     if sel_num == 1:
         fr5_A.put([cup[0]+left-right,cup[1]-forward+back], "yn" , "3",obj_height = 0)
         #放置后先在y方向上后移夹爪，再上升夹爪，防止触碰到器具
-        fr5_A.MoveL(0,50,0)       
-        fr5_A.MoveL(0,0,200)
+        fr5_A.MoveLDelta(0,50,0)       
+        fr5_A.MoveLDelta(0,0,200)
     if sel_num == 2:
         fr5_B.put([cup[0]+left-right,cup[1]-forward+back], "yn" , "3",obj_height = 0)
         #放置后先在y方向上后移夹爪，再上升夹爪，防止触碰到器具
-        fr5_B.MoveL(0,50,0)       
-        fr5_B.MoveL(0,0,200)
+        fr5_B.MoveLDelta(0,50,0)       
+        fr5_B.MoveLDelta(0,0,200)
         
     
 def pourwater(object,pour_num):
@@ -80,11 +80,11 @@ def stir(object):
     fr5_B.robot.MoveL([500, -450.7618408203125, 199.9986572265625, 90.11894226074217, 0.10213880985975267, -0.05570357292890549]
                     ,0
                     ,0)
-    fr5_B.MoveL(0,0,230)
+    fr5_B.MoveLDelta(0,0,230)
     fr5_B.robot.SetDO(0,1) 
     time.sleep(5)
     fr5_B.robot.SetDO(0,0)
-    fr5_B.MoveL(0,0,-230)
+    fr5_B.MoveLDelta(0,0,-230)
 
 def threading_1(x,y):
     pick([200,-600],sel_num=1)         #左爪抓取淀粉空杯，并放置于（x，y）处

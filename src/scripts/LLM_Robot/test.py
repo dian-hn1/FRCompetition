@@ -49,13 +49,13 @@ def placeObjectOn(object,left=0,right=0,forward=0,back=0,sel_num=1):
     if sel_num == 1:
         fr5_A.put([cup[0]+left-right,cup[1]-forward+back], "yn" , "3",obj_height = 0)
         #放置后先在y方向上后移夹爪，再上升夹爪，防止触碰到器具
-        fr5_A.MoveL(0,50,0)       
-        fr5_A.MoveL(0,0,200)
+        fr5_A.MoveLDelta(0,50,0)       
+        fr5_A.MoveLDelta(0,0,200)
     if sel_num == 2:
         fr5_B.put([cup[0]+left-right,cup[1]-forward+back], "yn" , "3",obj_height = 0)
         #放置后先在y方向上后移夹爪，再上升夹爪，防止触碰到器具
-        fr5_B.MoveL(0,50,0)       
-        fr5_B.MoveL(0,0,20      0)
+        fr5_B.MoveLDelta(0,50,0)       
+        fr5_B.MoveLDelta(0,0,20      0)
         
     
 def pourwater(object,pour_num):
@@ -73,12 +73,12 @@ def stir(object):
     fr5_B.robot.MoveL([502.577, -423.656, 210.346, 90.0, 0.0, 0]
                     ,0
                     ,0)
-    fr5_B.MoveL(0,0,200)
+    fr5_B.MoveLDelta(0,0,200)
     fr5_B.robot.SetDO(4,1) 
     input("stiring...press enter to continue")
     fr5_B.robot.SetDO(4,0)
-    fr5_B.MoveL(0,0,-230)
-    fr5_B.MoveL(-100,0,0)
+    fr5_B.MoveLDelta(0,0,-230)
+    fr5_B.MoveLDelta(-100,0,0)
     
 
 if __name__ == '__main__':

@@ -4,18 +4,22 @@ update date 2024-04-11
 '''
 
 import sys
+import os
 
-# sys.path.append("/home/zjh/FR5_exp/script")
+# 获取当前文件的目录
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# 将包含 Robot.so 的目录添加到 sys.path
+sys.path.append(current_dir)
+
 import copy
 import time
 import Robot
-import numpy as np
 import rospy
 from std_msgs.msg import Int32
 import threading
 import struct
-from serial.tools import list_ports
-import serial
+# from serial.tools import list_ports
+# import serial
 import time
 
 j3_auto_weight = [-49.458, -55.125, -124.682, -180.193, -49.458, 0.000] # 这个是机械臂复位的J
@@ -32,9 +36,9 @@ class fr5robot:
 
         # 初始化变量
         if index == 1:
-            self.robot = Robot.RPC('192.168.59.2')
+            self.robot = Robot.RPC('192.168.59.6')
         if index == 2:
-            self.robot = Robot.RPC('192.168.58.2')
+            self.robot = Robot.RPC('192.168.58.6')
             
         self.index = index
         self.robot.SetAO(0, 0.0, 0)
