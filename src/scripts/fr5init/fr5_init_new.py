@@ -27,8 +27,10 @@ def invoke_api(api_lambda, block=True, error_msg='failed to invoke api'):
         error_msg: 错误信息
     """
     raw_data = api_lambda()
-    while raw_data is not tuple and block:
-        print(error_msg)
+    # raw_data is a tuple, [ret, data], if no error
+    while (raw_data is not tuple or raw_data[0] != 0) and block:
+        # The sdk returns an error code
+        print(f'ret: {raw_data[0] if raw_data is tuple else raw_data}. {error_msg}')
         raw_data = api_lambda()
         time.sleep(0.25)
     if raw_data is tuple and raw_data.length == 2:
