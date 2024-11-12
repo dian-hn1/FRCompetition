@@ -25,6 +25,7 @@ def invoke_api(api_lambda, block=True, error_msg='failed to invoke api'):
         api_lambda: API接口
         block: 是否阻塞
         error_msg: 错误信息
+        return: API接口返回值或错误码
     """
     raw_data = api_lambda()
     # raw_data is a tuple, [ret, data], if no error
@@ -68,14 +69,14 @@ class fr5robot:
         self.pub_gripper2 = rospy.Publisher('pub_gripper2', Int32, queue_size=0)
 
     def MoveGripper(self, index, pos, speed, force, maxtime, block):
-        '''
+        """
         index:夹爪编号；
         pos:位置百分比，范围[0~100]；
         speed:速度百分比，范围[0~100];
         force:力矩百分比，范围[0~100]；
         maxtime:最大等待时间，范围[0~30000]，单位[ms]；
         block:0-阻塞，1-非阻塞。
-        '''
+        """
         if self.index == 1:
             self.robot.MoveGripper(index, pos, speed, force, maxtime, block)
             gripper_pos = Int32()
@@ -90,25 +91,25 @@ class fr5robot:
             exit()
 
     def Go_to_start_zone(self, v=30.0, open=1):
-        '''
+        """
             机械臂复位
-        '''
+        """
         self.point_safe_move([0.0, -250.0, 400.0, 90.0, 0.0, 0.0], v, 200.0)
         if open:
             self.MoveGripper(1, 100, 50, 10, 10000, 1)
 
     def dou_go_start(self, fr5_B, v=50.0):
-        '''
+        """
             两个机械臂同时复位
-        '''
+        """
         self.Go_to_start_zone(v)
         time.sleep(1)
         fr5_B.Go_to_start_zone(v)
 
     def MoveL(self, x=0.000, y=0.000, z=0.000, movespeed=100.0):
-        '''
+        """
             机械臂直线运动
-        '''
+        """
         eP1 = [0.000, 0.000, 0.000, 0.000]
         dP1 = [x, y, z, 0.000, 0.000, 0.000]
         pos_now = self.GetActualToolFlangePose()
@@ -126,9 +127,9 @@ class fr5robot:
         print('cuowuma', ret)
 
     def point_safe_move(self, start_catch_position, v=60.0, height=250.0, last_v=0):
-        '''
+        """
             机械臂安全运动到指定位置
-        '''
+        """
 
         end_height = self.GetActualToolFlangePose(error_msg='failed to get end_height_from_sdk1')
         if end_height[2] < height:
@@ -235,7 +236,7 @@ class fr5robot:
             self.robot.MoveCart(P1, 0, 0, 0.0, 0.0, v, -1.0, -1)
 
     def GetActualToolFlangePose(self, block=True, error_msg='failed to get pose'):
-        '''
+        """
             获取机械臂末端位置，也可用于判断动作是否完成
-        '''
+        """
         return invoke_api(lambda: self.robot.GetActualToolFlangePose(0), block, error_msg)
