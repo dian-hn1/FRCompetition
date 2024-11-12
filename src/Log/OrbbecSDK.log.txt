@@ -1,0 +1,792 @@
+[06/27 10:12:55.612565][debug][8504][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:12:55.612584][debug][8504][Context.cpp:48] Config file version=1.1
+[06/27 10:12:55.612593][debug][8504][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:12:55.612597][info][8504][Context.cpp:67] Context created with config: default config!
+[06/27 10:12:55.612604][info][8504][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:12:55.612607][debug][8504][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:12:55.612609][debug][8504][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:12:55.614922][debug][8504][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:12:55.615006][debug][8504][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:12:55.615021][debug][8504][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:12:55.615106][debug][8504][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:12:55.615164][debug][8504][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:12:55.615221][debug][8504][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:12:55.615278][debug][8504][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:12:55.731334][debug][8504][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:12:55.731732][debug][8504][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:12:55.731969][debug][8504][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:12:55.847713][debug][8504][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:12:55.847775][debug][8504][UsbDeviceEnumerator.cpp:164]  - 3-2-8.0 | 
+[06/27 10:12:55.847782][debug][8504][UsbDeviceEnumerator.cpp:164]  - 3-2-8.2 | 
+[06/27 10:12:55.847787][debug][8504][UsbDeviceEnumerator.cpp:164]  - 3-2-8.4 | 
+[06/27 10:12:55.847792][debug][8504][UsbDeviceEnumerator.cpp:164]  - 3-2-8.6 | 
+[06/27 10:12:55.847797][debug][8504][UsbDeviceEnumerator.cpp:164]  - 3-2-8.7 | 
+[06/27 10:12:55.848046][info][8504][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:12:55.848085][debug][8504][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:12:55.848095][debug][8504][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:12:55.848105][info][8504][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:12:55.848116][info][8504][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:12:55.848124][debug][8504][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:12:55.848635][error][8504][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:12:56.357732][error][8504][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:13:12.131419][debug][8723][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:13:12.131443][debug][8723][Context.cpp:48] Config file version=1.1
+[06/27 10:13:12.131453][debug][8723][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:13:12.131456][info][8723][Context.cpp:67] Context created with config: default config!
+[06/27 10:13:12.131464][info][8723][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:13:12.131470][debug][8723][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:13:12.131472][debug][8723][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:13:12.133638][debug][8723][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:13:12.133705][debug][8723][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:13:12.133716][debug][8723][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:13:12.133791][debug][8723][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:13:12.133847][debug][8723][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:13:12.133901][debug][8723][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:13:12.133957][debug][8723][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:13:12.247418][debug][8723][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:13:12.247783][debug][8723][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:13:12.248000][debug][8723][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:13:12.363674][debug][8723][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:13:12.363735][debug][8723][UsbDeviceEnumerator.cpp:164]  - 3-2-8.0 | 
+[06/27 10:13:12.363742][debug][8723][UsbDeviceEnumerator.cpp:164]  - 3-2-8.2 | 
+[06/27 10:13:12.363747][debug][8723][UsbDeviceEnumerator.cpp:164]  - 3-2-8.4 | 
+[06/27 10:13:12.363752][debug][8723][UsbDeviceEnumerator.cpp:164]  - 3-2-8.6 | 
+[06/27 10:13:12.363756][debug][8723][UsbDeviceEnumerator.cpp:164]  - 3-2-8.7 | 
+[06/27 10:13:12.363981][info][8723][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:13:12.364014][debug][8723][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:13:12.364032][debug][8723][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:13:12.364042][info][8723][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:13:12.364059][info][8723][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:13:12.364068][debug][8723][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:13:12.364604][error][8723][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:13:12.865270][error][8723][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:13:35.983084][debug][8879][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:13:35.983106][debug][8879][Context.cpp:48] Config file version=1.1
+[06/27 10:13:35.983116][debug][8879][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:13:35.983120][info][8879][Context.cpp:67] Context created with config: default config!
+[06/27 10:13:35.983127][info][8879][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:13:35.983131][debug][8879][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:13:35.983133][debug][8879][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:13:35.985315][debug][8879][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:13:35.985385][debug][8879][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:13:35.985417][debug][8879][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:13:35.985518][debug][8879][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:13:35.985586][debug][8879][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:13:35.985650][debug][8879][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:13:35.985709][debug][8879][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:13:35.985773][debug][8879][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:13:35.985835][debug][8879][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:13:35.985899][debug][8879][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:13:36.099643][debug][8879][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:13:36.099706][debug][8879][UsbDeviceEnumerator.cpp:164]  - 3-2-11.0 | 
+[06/27 10:13:36.099713][debug][8879][UsbDeviceEnumerator.cpp:164]  - 3-2-11.2 | 
+[06/27 10:13:36.099717][debug][8879][UsbDeviceEnumerator.cpp:164]  - 3-2-11.4 | 
+[06/27 10:13:36.099721][debug][8879][UsbDeviceEnumerator.cpp:164]  - 3-2-11.6 | 
+[06/27 10:13:36.099726][debug][8879][UsbDeviceEnumerator.cpp:164]  - 3-2-11.7 | 
+[06/27 10:13:36.099934][info][8879][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:13:36.099985][debug][8879][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:13:36.099993][debug][8879][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:13:36.100003][info][8879][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:13:36.100019][info][8879][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:13:36.100026][debug][8879][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:13:36.100654][error][8879][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:13:36.601481][error][8879][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:13:50.824651][debug][9069][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:13:50.824675][debug][9069][Context.cpp:48] Config file version=1.1
+[06/27 10:13:50.824685][debug][9069][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:13:50.824688][info][9069][Context.cpp:67] Context created with config: default config!
+[06/27 10:13:50.824698][info][9069][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:13:50.824703][debug][9069][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:13:50.824706][debug][9069][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:13:50.826942][debug][9069][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:13:50.827030][debug][9069][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:13:50.827042][debug][9069][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:13:50.827136][debug][9069][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:13:50.827198][debug][9069][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:13:50.827255][debug][9069][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:13:50.827310][debug][9069][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:13:50.943388][debug][9069][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:13:50.943780][debug][9069][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:13:50.943998][debug][9069][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:13:51.059766][debug][9069][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:13:51.059836][debug][9069][UsbDeviceEnumerator.cpp:164]  - 3-2-12.0 | 
+[06/27 10:13:51.059843][debug][9069][UsbDeviceEnumerator.cpp:164]  - 3-2-12.2 | 
+[06/27 10:13:51.059848][debug][9069][UsbDeviceEnumerator.cpp:164]  - 3-2-12.4 | 
+[06/27 10:13:51.059853][debug][9069][UsbDeviceEnumerator.cpp:164]  - 3-2-12.6 | 
+[06/27 10:13:51.059858][debug][9069][UsbDeviceEnumerator.cpp:164]  - 3-2-12.7 | 
+[06/27 10:13:51.060099][info][9069][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:13:51.060156][debug][9069][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:13:51.060169][debug][9069][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:13:51.060199][info][9069][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:13:51.060216][info][9069][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:13:51.060238][debug][9069][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:13:51.060794][error][9069][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:13:51.561538][error][9069][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:14:02.737834][debug][9270][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:14:02.737859][debug][9270][Context.cpp:48] Config file version=1.1
+[06/27 10:14:02.737869][debug][9270][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:14:02.737872][info][9270][Context.cpp:67] Context created with config: default config!
+[06/27 10:14:02.737881][info][9270][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:14:02.737886][debug][9270][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:14:02.737889][debug][9270][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:14:02.739936][debug][9270][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:14:02.740007][debug][9270][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:14:02.740023][debug][9270][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:14:02.740101][debug][9270][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:14:02.740162][debug][9270][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:14:02.740216][debug][9270][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:14:02.740272][debug][9270][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:14:02.855422][debug][9270][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:14:02.855800][debug][9270][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:14:02.856001][debug][9270][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:14:02.975797][debug][9270][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:14:02.975851][debug][9270][UsbDeviceEnumerator.cpp:164]  - 3-2-12.0 | 
+[06/27 10:14:02.975859][debug][9270][UsbDeviceEnumerator.cpp:164]  - 3-2-12.2 | 
+[06/27 10:14:02.975864][debug][9270][UsbDeviceEnumerator.cpp:164]  - 3-2-12.4 | 
+[06/27 10:14:02.975868][debug][9270][UsbDeviceEnumerator.cpp:164]  - 3-2-12.6 | 
+[06/27 10:14:02.975873][debug][9270][UsbDeviceEnumerator.cpp:164]  - 3-2-12.7 | 
+[06/27 10:14:02.976099][info][9270][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:14:02.976139][debug][9270][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:14:02.976152][debug][9270][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:14:02.976170][info][9270][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:14:02.976189][info][9270][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:14:02.976206][debug][9270][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:14:02.976881][error][9270][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:14:03.477748][error][9270][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:14:21.503825][debug][10220][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:14:21.503855][debug][10220][Context.cpp:48] Config file version=1.1
+[06/27 10:14:21.503868][debug][10220][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:14:21.503873][info][10220][Context.cpp:67] Context created with config: default config!
+[06/27 10:14:21.503881][info][10220][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:14:21.503887][debug][10220][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:14:21.503889][debug][10220][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:14:21.506105][debug][10220][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:14:21.506193][debug][10220][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:14:21.506221][debug][10220][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:14:21.506314][debug][10220][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:14:21.506374][debug][10220][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:14:21.506435][debug][10220][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:14:21.506681][debug][10220][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:14:21.623436][debug][10220][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:14:21.623826][debug][10220][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:14:21.623963][debug][10220][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:14:21.739354][debug][10220][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:14:21.739383][debug][10220][UsbDeviceEnumerator.cpp:164]  - 3-2-12.0 | 
+[06/27 10:14:21.739385][debug][10220][UsbDeviceEnumerator.cpp:164]  - 3-2-12.2 | 
+[06/27 10:14:21.739386][debug][10220][UsbDeviceEnumerator.cpp:164]  - 3-2-12.4 | 
+[06/27 10:14:21.739388][debug][10220][UsbDeviceEnumerator.cpp:164]  - 3-2-12.6 | 
+[06/27 10:14:21.739389][debug][10220][UsbDeviceEnumerator.cpp:164]  - 3-2-12.7 | 
+[06/27 10:14:21.739490][info][10220][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:14:21.739503][debug][10220][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:14:21.739506][debug][10220][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:14:21.739515][info][10220][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:14:21.739520][info][10220][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:14:21.739523][debug][10220][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:14:21.739718][error][10220][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:14:22.240092][error][10220][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:14:41.409130][debug][10433][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:14:41.409154][debug][10433][Context.cpp:48] Config file version=1.1
+[06/27 10:14:41.409163][debug][10433][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:14:41.409167][info][10433][Context.cpp:67] Context created with config: default config!
+[06/27 10:14:41.409175][info][10433][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:14:41.409179][debug][10433][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:14:41.409181][debug][10433][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:14:41.411173][debug][10433][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:14:41.411258][debug][10433][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:14:41.411269][debug][10433][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:14:41.411376][debug][10433][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:14:41.411439][debug][10433][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:14:41.411502][debug][10433][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:14:41.411555][debug][10433][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:14:41.411617][debug][10433][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:14:41.411677][debug][10433][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:14:41.411732][debug][10433][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:14:41.527473][debug][10433][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:14:41.527499][debug][10433][UsbDeviceEnumerator.cpp:164]  - 3-2-15.0 | 
+[06/27 10:14:41.527501][debug][10433][UsbDeviceEnumerator.cpp:164]  - 3-2-15.2 | 
+[06/27 10:14:41.527502][debug][10433][UsbDeviceEnumerator.cpp:164]  - 3-2-15.4 | 
+[06/27 10:14:41.527504][debug][10433][UsbDeviceEnumerator.cpp:164]  - 3-2-15.6 | 
+[06/27 10:14:41.527505][debug][10433][UsbDeviceEnumerator.cpp:164]  - 3-2-15.7 | 
+[06/27 10:14:41.527599][info][10433][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:14:41.527612][debug][10433][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:14:41.527614][debug][10433][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:14:41.527618][info][10433][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:14:41.527621][info][10433][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:14:41.527623][debug][10433][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:14:41.527809][error][10433][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:14:42.028178][error][10433][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:15:01.226599][debug][10580][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:15:01.226624][debug][10580][Context.cpp:48] Config file version=1.1
+[06/27 10:15:01.226634][debug][10580][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:15:01.226638][info][10580][Context.cpp:67] Context created with config: default config!
+[06/27 10:15:01.226648][info][10580][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:15:01.226654][debug][10580][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:15:01.226656][debug][10580][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:15:01.228808][debug][10580][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:15:01.228876][debug][10580][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:15:01.228888][debug][10580][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:15:01.228979][debug][10580][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:15:01.229038][debug][10580][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:15:01.229095][debug][10580][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:15:01.229149][debug][10580][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:15:01.343324][debug][10580][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:15:01.343732][debug][10580][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:15:01.343975][debug][10580][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:15:01.459760][debug][10580][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:15:01.459825][debug][10580][UsbDeviceEnumerator.cpp:164]  - 3-2-16.0 | 
+[06/27 10:15:01.459833][debug][10580][UsbDeviceEnumerator.cpp:164]  - 3-2-16.2 | 
+[06/27 10:15:01.459838][debug][10580][UsbDeviceEnumerator.cpp:164]  - 3-2-16.4 | 
+[06/27 10:15:01.459842][debug][10580][UsbDeviceEnumerator.cpp:164]  - 3-2-16.6 | 
+[06/27 10:15:01.459848][debug][10580][UsbDeviceEnumerator.cpp:164]  - 3-2-16.7 | 
+[06/27 10:15:01.460045][info][10580][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:15:01.460078][debug][10580][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:15:01.460087][debug][10580][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:15:01.460097][info][10580][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:15:01.460107][info][10580][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:15:01.460116][debug][10580][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:15:01.460636][error][10580][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:15:01.961367][error][10580][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:15:30.699593][debug][10716][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:15:30.699613][debug][10716][Context.cpp:48] Config file version=1.1
+[06/27 10:15:30.699623][debug][10716][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:15:30.699626][info][10716][Context.cpp:67] Context created with config: default config!
+[06/27 10:15:30.699634][info][10716][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:15:30.699637][debug][10716][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:15:30.699639][debug][10716][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:15:30.701642][debug][10716][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:15:30.701711][debug][10716][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:15:30.701722][debug][10716][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:15:30.701809][debug][10716][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:15:30.701869][debug][10716][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:15:30.701932][debug][10716][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:15:30.701986][debug][10716][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:15:30.702050][debug][10716][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:15:30.702107][debug][10716][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:15:30.702162][debug][10716][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:15:30.815656][debug][10716][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:15:30.815717][debug][10716][UsbDeviceEnumerator.cpp:164]  - 3-2-18.0 | 
+[06/27 10:15:30.815724][debug][10716][UsbDeviceEnumerator.cpp:164]  - 3-2-18.2 | 
+[06/27 10:15:30.815729][debug][10716][UsbDeviceEnumerator.cpp:164]  - 3-2-18.4 | 
+[06/27 10:15:30.815753][debug][10716][UsbDeviceEnumerator.cpp:164]  - 3-2-18.6 | 
+[06/27 10:15:30.815758][debug][10716][UsbDeviceEnumerator.cpp:164]  - 3-2-18.7 | 
+[06/27 10:15:30.815979][info][10716][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:15:30.816016][debug][10716][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:15:30.816026][debug][10716][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:15:30.816037][info][10716][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:15:30.816047][info][10716][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:15:30.816056][debug][10716][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:15:30.816544][error][10716][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:15:31.317305][error][10716][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:15:35.577286][debug][10844][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:15:35.577311][debug][10844][Context.cpp:48] Config file version=1.1
+[06/27 10:15:35.577322][debug][10844][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:15:35.577326][info][10844][Context.cpp:67] Context created with config: default config!
+[06/27 10:15:35.577336][info][10844][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:15:35.577341][debug][10844][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:15:35.577344][debug][10844][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:15:35.579466][debug][10844][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:15:35.579537][debug][10844][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:15:35.579548][debug][10844][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:15:35.579664][debug][10844][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:15:35.579748][debug][10844][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:15:35.579812][debug][10844][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:15:35.579897][debug][10844][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:15:35.579976][debug][10844][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:15:35.580039][debug][10844][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:15:35.580095][debug][10844][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:15:35.695400][debug][10844][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:15:35.695421][debug][10844][UsbDeviceEnumerator.cpp:164]  - 3-2-20.0 | 
+[06/27 10:15:35.695424][debug][10844][UsbDeviceEnumerator.cpp:164]  - 3-2-20.2 | 
+[06/27 10:15:35.695425][debug][10844][UsbDeviceEnumerator.cpp:164]  - 3-2-20.4 | 
+[06/27 10:15:35.695426][debug][10844][UsbDeviceEnumerator.cpp:164]  - 3-2-20.6 | 
+[06/27 10:15:35.695428][debug][10844][UsbDeviceEnumerator.cpp:164]  - 3-2-20.7 | 
+[06/27 10:15:35.695516][info][10844][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:15:35.695528][debug][10844][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:15:35.695532][debug][10844][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:15:35.695537][info][10844][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:15:35.695542][info][10844][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:15:35.695545][debug][10844][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:15:35.695752][error][10844][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:15:36.196194][error][10844][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:15:50.081606][debug][11043][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:15:50.081635][debug][11043][Context.cpp:48] Config file version=1.1
+[06/27 10:15:50.081649][debug][11043][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:15:50.081657][info][11043][Context.cpp:67] Context created with config: default config!
+[06/27 10:15:50.081665][info][11043][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:15:50.081669][debug][11043][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:15:50.081671][debug][11043][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:15:50.083449][debug][11043][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:15:50.083460][debug][11043][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:15:50.083467][debug][11043][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:15:50.083549][debug][11043][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:15:50.199451][info][11043][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:15:50.199495][debug][11043][UsbDeviceEnumerator.cpp:76] No matched usb device found!
+[06/27 10:15:50.199500][info][11043][DeviceManager.cpp:15] Current found device(s): (0)
+[06/27 10:15:50.199504][debug][11043][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:15:59.875227][debug][11253][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:15:59.875251][debug][11253][Context.cpp:48] Config file version=1.1
+[06/27 10:15:59.875261][debug][11253][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:15:59.875264][info][11253][Context.cpp:67] Context created with config: default config!
+[06/27 10:15:59.875272][info][11253][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:15:59.875276][debug][11253][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:15:59.875277][debug][11253][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:15:59.877390][debug][11253][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:15:59.877459][debug][11253][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:15:59.877470][debug][11253][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:15:59.877561][debug][11253][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:15:59.877624][debug][11253][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:15:59.877684][debug][11253][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:15:59.877739][debug][11253][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:15:59.999404][debug][11253][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:15:59.999791][debug][11253][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:16:00.000023][debug][11253][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:16:00.115782][debug][11253][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:16:00.115835][debug][11253][UsbDeviceEnumerator.cpp:164]  - 3-2-24.0 | 
+[06/27 10:16:00.115846][debug][11253][UsbDeviceEnumerator.cpp:164]  - 3-2-24.2 | 
+[06/27 10:16:00.115851][debug][11253][UsbDeviceEnumerator.cpp:164]  - 3-2-24.4 | 
+[06/27 10:16:00.115856][debug][11253][UsbDeviceEnumerator.cpp:164]  - 3-2-24.6 | 
+[06/27 10:16:00.115861][debug][11253][UsbDeviceEnumerator.cpp:164]  - 3-2-24.7 | 
+[06/27 10:16:00.116100][info][11253][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:16:00.116165][debug][11253][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:16:00.116174][debug][11253][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:16:00.116190][info][11253][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:16:00.116201][info][11253][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:16:00.116210][debug][11253][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:16:00.116748][error][11253][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:16:00.617344][error][11253][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:16:05.232792][debug][11326][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:16:05.232826][debug][11326][Context.cpp:48] Config file version=1.1
+[06/27 10:16:05.232836][debug][11326][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:16:05.232840][info][11326][Context.cpp:67] Context created with config: default config!
+[06/27 10:16:05.232849][info][11326][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:16:05.232853][debug][11326][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:16:05.232854][debug][11326][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:16:05.234978][debug][11326][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:16:05.235058][debug][11326][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:16:05.235078][debug][11326][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:16:05.235157][debug][11326][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:16:05.235212][debug][11326][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:16:05.235266][debug][11326][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:16:05.235319][debug][11326][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:16:05.351321][debug][11326][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:16:05.351765][debug][11326][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:16:05.352070][debug][11326][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:16:05.467768][debug][11326][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:16:05.467819][debug][11326][UsbDeviceEnumerator.cpp:164]  - 3-2-24.0 | 
+[06/27 10:16:05.467826][debug][11326][UsbDeviceEnumerator.cpp:164]  - 3-2-24.2 | 
+[06/27 10:16:05.467830][debug][11326][UsbDeviceEnumerator.cpp:164]  - 3-2-24.4 | 
+[06/27 10:16:05.467835][debug][11326][UsbDeviceEnumerator.cpp:164]  - 3-2-24.6 | 
+[06/27 10:16:05.467840][debug][11326][UsbDeviceEnumerator.cpp:164]  - 3-2-24.7 | 
+[06/27 10:16:05.468043][info][11326][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:16:05.468073][debug][11326][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:16:05.468081][debug][11326][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:16:05.468098][info][11326][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:16:05.468108][info][11326][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:16:05.468116][debug][11326][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:16:05.468585][error][11326][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:16:05.969277][error][11326][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:16:21.062436][debug][11468][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:16:21.062461][debug][11468][Context.cpp:48] Config file version=1.1
+[06/27 10:16:21.062471][debug][11468][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:16:21.062475][info][11468][Context.cpp:67] Context created with config: default config!
+[06/27 10:16:21.062484][info][11468][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:16:21.062490][debug][11468][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:16:21.062491][debug][11468][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:16:21.064408][debug][11468][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:16:21.064477][debug][11468][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:16:21.064492][debug][11468][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:16:21.064578][debug][11468][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:16:21.064640][debug][11468][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:16:21.064697][debug][11468][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:16:21.064751][debug][11468][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:16:21.064815][debug][11468][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:16:21.064881][debug][11468][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:16:21.064936][debug][11468][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:16:21.183680][debug][11468][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:16:21.183747][debug][11468][UsbDeviceEnumerator.cpp:164]  - 3-2-26.0 | 
+[06/27 10:16:21.183755][debug][11468][UsbDeviceEnumerator.cpp:164]  - 3-2-26.2 | 
+[06/27 10:16:21.183760][debug][11468][UsbDeviceEnumerator.cpp:164]  - 3-2-26.4 | 
+[06/27 10:16:21.183765][debug][11468][UsbDeviceEnumerator.cpp:164]  - 3-2-26.6 | 
+[06/27 10:16:21.183770][debug][11468][UsbDeviceEnumerator.cpp:164]  - 3-2-26.7 | 
+[06/27 10:16:21.183997][info][11468][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:16:21.184042][debug][11468][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:16:21.184055][debug][11468][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:16:21.184076][info][11468][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:16:21.184095][info][11468][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:16:21.184112][debug][11468][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:16:21.184671][error][11468][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_NO_DEVICE
+[06/27 10:16:47.685036][debug][11709][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:16:47.685058][debug][11709][Context.cpp:48] Config file version=1.1
+[06/27 10:16:47.685067][debug][11709][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:16:47.685071][info][11709][Context.cpp:67] Context created with config: default config!
+[06/27 10:16:47.685080][info][11709][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:16:47.685087][debug][11709][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:16:47.685089][debug][11709][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:16:47.687078][debug][11709][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:16:47.687145][debug][11709][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:16:47.687156][debug][11709][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:16:47.687249][debug][11709][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:16:47.687314][debug][11709][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:16:47.687376][debug][11709][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:16:47.687430][debug][11709][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:16:47.687492][debug][11709][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:16:47.687552][debug][11709][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:16:47.687608][debug][11709][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:16:47.803704][debug][11709][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:16:47.803757][debug][11709][UsbDeviceEnumerator.cpp:164]  - 3-3-33.0 | 
+[06/27 10:16:47.803764][debug][11709][UsbDeviceEnumerator.cpp:164]  - 3-3-33.2 | 
+[06/27 10:16:47.803769][debug][11709][UsbDeviceEnumerator.cpp:164]  - 3-3-33.4 | 
+[06/27 10:16:47.803773][debug][11709][UsbDeviceEnumerator.cpp:164]  - 3-3-33.6 | 
+[06/27 10:16:47.803777][debug][11709][UsbDeviceEnumerator.cpp:164]  - 3-3-33.7 | 
+[06/27 10:16:47.803986][info][11709][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:16:47.804037][debug][11709][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:16:47.804053][debug][11709][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:16:47.804066][info][11709][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:16:47.804083][info][11709][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:16:47.804109][debug][11709][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:16:47.804712][error][11709][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:16:48.305528][error][11709][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:17:40.177174][debug][12007][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:17:40.177200][debug][12007][Context.cpp:48] Config file version=1.1
+[06/27 10:17:40.177211][debug][12007][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:17:40.177215][info][12007][Context.cpp:67] Context created with config: default config!
+[06/27 10:17:40.177224][info][12007][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:17:40.177228][debug][12007][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:17:40.177230][debug][12007][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:17:40.179350][debug][12007][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:17:40.179417][debug][12007][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:17:40.179430][debug][12007][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:17:40.179524][debug][12007][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:17:40.179585][debug][12007][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:17:40.179643][debug][12007][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:17:40.179698][debug][12007][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:17:40.179768][debug][12007][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:17:40.179827][debug][12007][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:17:40.179883][debug][12007][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:17:40.299723][debug][12007][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:17:40.299777][debug][12007][UsbDeviceEnumerator.cpp:164]  - 3-1-40.0 | 
+[06/27 10:17:40.299784][debug][12007][UsbDeviceEnumerator.cpp:164]  - 3-1-40.2 | 
+[06/27 10:17:40.299789][debug][12007][UsbDeviceEnumerator.cpp:164]  - 3-1-40.4 | 
+[06/27 10:17:40.299793][debug][12007][UsbDeviceEnumerator.cpp:164]  - 3-1-40.6 | 
+[06/27 10:17:40.299798][debug][12007][UsbDeviceEnumerator.cpp:164]  - 3-1-40.7 | 
+[06/27 10:17:40.300011][info][12007][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:17:40.300059][debug][12007][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:17:40.300071][debug][12007][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:17:40.300082][info][12007][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:17:40.300097][info][12007][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:17:40.300112][debug][12007][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:17:40.300664][error][12007][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:17:40.801417][error][12007][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:18:30.720062][debug][13276][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:18:30.720087][debug][13276][Context.cpp:48] Config file version=1.1
+[06/27 10:18:30.720097][debug][13276][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:18:30.720100][info][13276][Context.cpp:67] Context created with config: default config!
+[06/27 10:18:30.720108][info][13276][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:18:30.720112][debug][13276][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:18:30.720113][debug][13276][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:18:30.722232][debug][13276][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:18:30.722301][debug][13276][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:18:30.722317][debug][13276][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:18:30.722411][debug][13276][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:18:30.722472][debug][13276][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:18:30.722537][debug][13276][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:18:30.722592][debug][13276][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:18:30.835422][debug][13276][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:18:30.835859][debug][13276][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:18:30.836091][debug][13276][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:18:30.951694][debug][13276][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:18:30.951749][debug][13276][UsbDeviceEnumerator.cpp:164]  - 3-1-41.0 | 
+[06/27 10:18:30.951756][debug][13276][UsbDeviceEnumerator.cpp:164]  - 3-1-41.2 | 
+[06/27 10:18:30.951762][debug][13276][UsbDeviceEnumerator.cpp:164]  - 3-1-41.4 | 
+[06/27 10:18:30.951767][debug][13276][UsbDeviceEnumerator.cpp:164]  - 3-1-41.6 | 
+[06/27 10:18:30.951772][debug][13276][UsbDeviceEnumerator.cpp:164]  - 3-1-41.7 | 
+[06/27 10:18:30.951972][info][13276][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:18:30.952008][debug][13276][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:18:30.952017][debug][13276][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:18:30.952027][info][13276][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:18:30.952037][info][13276][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:18:30.952049][debug][13276][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:18:30.952534][error][13276][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:18:31.453252][error][13276][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:19:51.727890][debug][13609][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:19:51.727917][debug][13609][Context.cpp:48] Config file version=1.1
+[06/27 10:19:51.727927][debug][13609][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:19:51.727930][info][13609][Context.cpp:67] Context created with config: default config!
+[06/27 10:19:51.727938][info][13609][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:19:51.727944][debug][13609][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:19:51.727946][debug][13609][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:19:51.730004][debug][13609][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:19:51.730087][debug][13609][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:19:51.730099][debug][13609][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:19:51.730179][debug][13609][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:19:51.730232][debug][13609][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:19:51.730284][debug][13609][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:19:51.730337][debug][13609][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:19:51.843341][debug][13609][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:19:51.843779][debug][13609][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:19:51.844015][debug][13609][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:19:51.959681][debug][13609][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:19:51.959731][debug][13609][UsbDeviceEnumerator.cpp:164]  - 3-1-41.0 | 
+[06/27 10:19:51.959740][debug][13609][UsbDeviceEnumerator.cpp:164]  - 3-1-41.2 | 
+[06/27 10:19:51.959745][debug][13609][UsbDeviceEnumerator.cpp:164]  - 3-1-41.4 | 
+[06/27 10:19:51.959750][debug][13609][UsbDeviceEnumerator.cpp:164]  - 3-1-41.6 | 
+[06/27 10:19:51.959755][debug][13609][UsbDeviceEnumerator.cpp:164]  - 3-1-41.7 | 
+[06/27 10:19:51.959977][info][13609][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:19:51.960022][debug][13609][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:19:51.960032][debug][13609][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:19:51.960058][info][13609][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:19:51.960074][info][13609][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:19:51.960083][debug][13609][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:19:51.960684][error][13609][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:19:52.461535][error][13609][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:24:26.220129][debug][14716][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:24:26.220154][debug][14716][Context.cpp:48] Config file version=1.1
+[06/27 10:24:26.220164][debug][14716][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:24:26.220167][info][14716][Context.cpp:67] Context created with config: default config!
+[06/27 10:24:26.220175][info][14716][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:24:26.220179][debug][14716][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:24:26.220180][debug][14716][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:24:26.222373][debug][14716][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:24:26.222442][debug][14716][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:24:26.222457][debug][14716][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:24:26.222547][debug][14716][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:24:26.222612][debug][14716][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:24:26.222674][debug][14716][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:24:26.222736][debug][14716][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:24:26.339460][debug][14716][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:24:26.339838][debug][14716][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:24:26.340056][debug][14716][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:24:26.455844][debug][14716][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:24:26.455899][debug][14716][UsbDeviceEnumerator.cpp:164]  - 3-1-45.0 | 
+[06/27 10:24:26.455907][debug][14716][UsbDeviceEnumerator.cpp:164]  - 3-1-45.2 | 
+[06/27 10:24:26.455912][debug][14716][UsbDeviceEnumerator.cpp:164]  - 3-1-45.4 | 
+[06/27 10:24:26.455917][debug][14716][UsbDeviceEnumerator.cpp:164]  - 3-1-45.6 | 
+[06/27 10:24:26.455922][debug][14716][UsbDeviceEnumerator.cpp:164]  - 3-1-45.7 | 
+[06/27 10:24:26.456143][info][14716][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:24:26.456191][debug][14716][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:24:26.456200][debug][14716][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:24:26.456221][info][14716][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:24:26.456231][info][14716][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:24:26.456240][debug][14716][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:24:26.456788][error][14716][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:24:26.957543][error][14716][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:24:38.677629][debug][14801][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:24:38.677655][debug][14801][Context.cpp:48] Config file version=1.1
+[06/27 10:24:38.677663][debug][14801][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:24:38.677667][info][14801][Context.cpp:67] Context created with config: default config!
+[06/27 10:24:38.677675][info][14801][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:24:38.677682][debug][14801][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:24:38.677684][debug][14801][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:24:38.679963][debug][14801][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:24:38.680050][debug][14801][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:24:38.680060][debug][14801][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:24:38.680147][debug][14801][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:24:38.680201][debug][14801][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:24:38.680251][debug][14801][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:24:38.680304][debug][14801][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:24:38.795365][debug][14801][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:24:38.795751][debug][14801][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:24:38.795968][debug][14801][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:24:38.911825][debug][14801][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:24:38.911879][debug][14801][UsbDeviceEnumerator.cpp:164]  - 3-1-45.0 | 
+[06/27 10:24:38.911887][debug][14801][UsbDeviceEnumerator.cpp:164]  - 3-1-45.2 | 
+[06/27 10:24:38.911893][debug][14801][UsbDeviceEnumerator.cpp:164]  - 3-1-45.4 | 
+[06/27 10:24:38.911898][debug][14801][UsbDeviceEnumerator.cpp:164]  - 3-1-45.6 | 
+[06/27 10:24:38.911903][debug][14801][UsbDeviceEnumerator.cpp:164]  - 3-1-45.7 | 
+[06/27 10:24:38.912122][info][14801][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:24:38.912167][debug][14801][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:24:38.912177][debug][14801][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:24:38.912187][info][14801][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:24:38.912199][info][14801][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:24:38.912208][debug][14801][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:24:38.912775][error][14801][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:24:39.413409][error][14801][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:24:49.908196][debug][14887][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:24:49.908221][debug][14887][Context.cpp:48] Config file version=1.1
+[06/27 10:24:49.908231][debug][14887][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:24:49.908234][info][14887][Context.cpp:67] Context created with config: default config!
+[06/27 10:24:49.908243][info][14887][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:24:49.908246][debug][14887][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:24:49.908248][debug][14887][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:24:49.910424][debug][14887][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:24:49.910494][debug][14887][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:24:49.910506][debug][14887][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:24:49.910591][debug][14887][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:24:49.910648][debug][14887][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:24:49.910705][debug][14887][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:24:49.910761][debug][14887][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:24:50.031378][debug][14887][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:24:50.031737][debug][14887][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:24:50.031925][debug][14887][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:24:50.151764][debug][14887][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:24:50.151822][debug][14887][UsbDeviceEnumerator.cpp:164]  - 3-1-45.0 | 
+[06/27 10:24:50.151829][debug][14887][UsbDeviceEnumerator.cpp:164]  - 3-1-45.2 | 
+[06/27 10:24:50.151834][debug][14887][UsbDeviceEnumerator.cpp:164]  - 3-1-45.4 | 
+[06/27 10:24:50.151839][debug][14887][UsbDeviceEnumerator.cpp:164]  - 3-1-45.6 | 
+[06/27 10:24:50.151865][debug][14887][UsbDeviceEnumerator.cpp:164]  - 3-1-45.7 | 
+[06/27 10:24:50.152078][info][14887][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:24:50.152128][debug][14887][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:24:50.152136][debug][14887][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:24:50.152153][info][14887][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:24:50.152163][info][14887][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:24:50.152172][debug][14887][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:24:50.152717][error][14887][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:24:50.653421][error][14887][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:25:01.559896][debug][14957][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:25:01.559923][debug][14957][Context.cpp:48] Config file version=1.1
+[06/27 10:25:01.559936][debug][14957][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:25:01.559940][info][14957][Context.cpp:67] Context created with config: default config!
+[06/27 10:25:01.559948][info][14957][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:25:01.559952][debug][14957][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:25:01.559953][debug][14957][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:25:01.562002][debug][14957][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:25:01.681550][debug][14957][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:25:01.681602][debug][14957][ObV4lDevice.cpp:341] Found video4linux: video7
+[06/27 10:25:01.681718][debug][14957][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:25:01.681784][debug][14957][ObV4lDevice.cpp:341] Found video4linux: video3
+[06/27 10:25:01.681834][debug][14957][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:25:01.681896][debug][14957][ObV4lDevice.cpp:341] Found video4linux: video6
+[06/27 10:25:01.681952][debug][14957][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:25:01.682007][debug][14957][ObV4lDevice.cpp:341] Found video4linux: video2
+[06/27 10:25:01.682058][debug][14957][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:25:01.795885][debug][14957][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:25:01.795941][debug][14957][UsbDeviceEnumerator.cpp:164]  - 3-1-45.0 | Orbbec Gemini 2 Depth Camera
+[06/27 10:25:01.795948][debug][14957][UsbDeviceEnumerator.cpp:164]  - 3-1-45.2 | Orbbec Gemini 2 IR Camera
+[06/27 10:25:01.795954][debug][14957][UsbDeviceEnumerator.cpp:164]  - 3-1-45.4 | Orbbec Gemini 2 RGB Camera
+[06/27 10:25:01.795959][debug][14957][UsbDeviceEnumerator.cpp:164]  - 3-1-45.6 | Orbbec Gemini Data Channel
+[06/27 10:25:01.795964][debug][14957][UsbDeviceEnumerator.cpp:164]  - 3-1-45.7 | Orbbec Gemini 2 IMU
+[06/27 10:25:01.796203][info][14957][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:25:01.796259][debug][14957][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:25:01.796268][debug][14957][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: AY3C73100HZ, connection: USB2.0
+[06/27 10:25:01.796280][info][14957][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:25:01.796292][info][14957][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: AY3C73100HZ, Connection: USB2.0
+[06/27 10:25:01.796303][debug][14957][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:25:54.591786][debug][15296][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:25:54.591809][debug][15296][Context.cpp:48] Config file version=1.1
+[06/27 10:25:54.591819][debug][15296][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:25:54.591825][info][15296][Context.cpp:67] Context created with config: default config!
+[06/27 10:25:54.591838][info][15296][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:25:54.591842][debug][15296][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:25:54.591844][debug][15296][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:25:54.593906][debug][15296][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:25:54.593974][debug][15296][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:25:54.593985][debug][15296][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:25:54.594063][debug][15296][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:25:54.594120][debug][15296][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:25:54.707234][debug][15296][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:25:54.823376][debug][15296][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:25:54.823396][debug][15296][UsbDeviceEnumerator.cpp:164]  - 3-1-45.0 | 
+[06/27 10:25:54.823398][debug][15296][UsbDeviceEnumerator.cpp:164]  - 3-1-45.2 | 
+[06/27 10:25:54.823400][debug][15296][UsbDeviceEnumerator.cpp:164]  - 3-1-45.4 | 
+[06/27 10:25:54.823401][debug][15296][UsbDeviceEnumerator.cpp:164]  - 3-1-45.6 | 
+[06/27 10:25:54.823402][debug][15296][UsbDeviceEnumerator.cpp:164]  - 3-1-45.7 | 
+[06/27 10:25:54.823468][info][15296][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:25:54.823480][debug][15296][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:25:54.823483][debug][15296][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:25:54.823487][info][15296][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:25:54.823490][info][15296][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:25:54.823493][debug][15296][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:25:54.823716][error][15296][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:25:55.324182][error][15296][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:27:34.378067][debug][41490][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:27:34.378272][debug][41490][Context.cpp:48] Config file version=1.1
+[06/27 10:27:34.378285][debug][41490][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:27:34.378289][info][41490][Context.cpp:67] Context created with config: default config!
+[06/27 10:27:34.378298][info][41490][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:27:34.378302][debug][41490][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:27:34.378304][debug][41490][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:27:34.380247][debug][41490][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:27:34.498362][debug][41490][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:27:34.498406][debug][41490][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:27:34.498514][debug][41490][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:27:34.498578][debug][41490][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:27:34.498637][debug][41490][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:27:34.611392][debug][41490][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:27:34.611414][debug][41490][UsbDeviceEnumerator.cpp:164]  - 3-1-45.0 | Orbbec Gemini 2 Depth Camera
+[06/27 10:27:34.611416][debug][41490][UsbDeviceEnumerator.cpp:164]  - 3-1-45.2 | Orbbec Gemini 2 IR Camera
+[06/27 10:27:34.611418][debug][41490][UsbDeviceEnumerator.cpp:164]  - 3-1-45.4 | Orbbec Gemini 2 RGB Camera
+[06/27 10:27:34.611419][debug][41490][UsbDeviceEnumerator.cpp:164]  - 3-1-45.6 | Orbbec Gemini Data Channel
+[06/27 10:27:34.611421][debug][41490][UsbDeviceEnumerator.cpp:164]  - 3-1-45.7 | Orbbec Gemini 2 IMU
+[06/27 10:27:34.611500][info][41490][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:27:34.611516][debug][41490][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:27:34.611526][debug][41490][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: AY3C73100HZ, connection: USB2.0
+[06/27 10:27:34.611531][info][41490][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:27:34.611540][info][41490][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: AY3C73100HZ, Connection: USB2.0
+[06/27 10:27:34.611543][debug][41490][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:28:02.442642][debug][46291][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:28:02.442876][debug][46291][Context.cpp:48] Config file version=1.1
+[06/27 10:28:02.442887][debug][46291][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:28:02.442891][info][46291][Context.cpp:67] Context created with config: default config!
+[06/27 10:28:02.442901][info][46291][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:28:02.442904][debug][46291][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:28:02.442906][debug][46291][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:28:02.445101][debug][46291][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:28:02.564844][debug][46291][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:28:02.564901][debug][46291][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:28:02.565010][debug][46291][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:28:02.565080][debug][46291][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:28:02.565137][debug][46291][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:28:02.691610][debug][46291][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:28:02.691663][debug][46291][UsbDeviceEnumerator.cpp:164]  - 3-1-45.0 | Orbbec Gemini 2 Depth Camera
+[06/27 10:28:02.691671][debug][46291][UsbDeviceEnumerator.cpp:164]  - 3-1-45.2 | Orbbec Gemini 2 IR Camera
+[06/27 10:28:02.691676][debug][46291][UsbDeviceEnumerator.cpp:164]  - 3-1-45.4 | Orbbec Gemini 2 RGB Camera
+[06/27 10:28:02.691681][debug][46291][UsbDeviceEnumerator.cpp:164]  - 3-1-45.6 | Orbbec Gemini Data Channel
+[06/27 10:28:02.691689][debug][46291][UsbDeviceEnumerator.cpp:164]  - 3-1-45.7 | Orbbec Gemini 2 IMU
+[06/27 10:28:02.691940][info][46291][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:28:02.691973][debug][46291][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:28:02.691986][debug][46291][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: AY3C73100HZ, connection: USB2.0
+[06/27 10:28:02.692000][info][46291][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:28:02.692012][info][46291][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: AY3C73100HZ, Connection: USB2.0
+[06/27 10:28:02.692023][debug][46291][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:34:32.296713][debug][47393][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:34:32.296742][debug][47393][Context.cpp:48] Config file version=1.1
+[06/27 10:34:32.296770][debug][47393][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:34:32.296774][info][47393][Context.cpp:67] Context created with config: default config!
+[06/27 10:34:32.296783][info][47393][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:34:32.296786][debug][47393][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:34:32.296788][debug][47393][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:34:32.299208][debug][47393][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:34:32.299282][debug][47393][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:34:32.299294][debug][47393][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:34:32.299371][debug][47393][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:34:32.299428][debug][47393][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:34:32.423284][debug][47393][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:34:32.539780][debug][47393][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:34:32.539837][debug][47393][UsbDeviceEnumerator.cpp:164]  - 3-1-45.0 | 
+[06/27 10:34:32.539845][debug][47393][UsbDeviceEnumerator.cpp:164]  - 3-1-45.2 | 
+[06/27 10:34:32.539850][debug][47393][UsbDeviceEnumerator.cpp:164]  - 3-1-45.4 | 
+[06/27 10:34:32.539856][debug][47393][UsbDeviceEnumerator.cpp:164]  - 3-1-45.6 | 
+[06/27 10:34:32.539861][debug][47393][UsbDeviceEnumerator.cpp:164]  - 3-1-45.7 | 
+[06/27 10:34:32.540113][info][47393][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:34:32.540157][debug][47393][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:34:32.540168][debug][47393][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , connection: USB2.0
+[06/27 10:34:32.540183][info][47393][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:34:32.540198][info][47393][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: , Connection: USB2.0
+[06/27 10:34:32.540207][debug][47393][DeviceManager.cpp:55] DeviceManager construct done!
+[06/27 10:34:32.540803][error][47393][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:34:33.041581][error][47393][DeviceLibusb.cpp:112] failed to open usb device!  error: OB_USB_STATUS_ACCESS
+[06/27 10:34:45.638445][debug][47479][Context.cpp:29] Context creating. work_dir=/home/wangzy/FR5_exp
+[06/27 10:34:45.638471][debug][47479][Context.cpp:48] Config file version=1.1
+[06/27 10:34:45.638481][debug][47479][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[06/27 10:34:45.638484][info][47479][Context.cpp:67] Context created with config: default config!
+[06/27 10:34:45.638494][info][47479][Context.cpp:72] Context work_dir=/home/wangzy/FR5_exp
+[06/27 10:34:45.638497][debug][47479][DeviceManager.cpp:30] DeviceManager init ...
+[06/27 10:34:45.638499][debug][47479][LinuxPal.cpp:36] createObPal: create LinuxPal!
+[06/27 10:34:45.640638][debug][47479][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[06/27 10:34:45.764546][debug][47479][EnumeratorLibusb.cpp:323] queryDevicesInfo done!
+[06/27 10:34:45.764605][debug][47479][ObV4lDevice.cpp:341] Found video4linux: video5
+[06/27 10:34:45.764720][debug][47479][ObV4lDevice.cpp:341] Found video4linux: video1
+[06/27 10:34:45.764789][debug][47479][ObV4lDevice.cpp:341] Found video4linux: video4
+[06/27 10:34:45.764859][debug][47479][ObV4lDevice.cpp:341] Found video4linux: video0
+[06/27 10:34:45.879699][debug][47479][UsbDeviceEnumerator.cpp:161] Current usb device port list:
+[06/27 10:34:45.879755][debug][47479][UsbDeviceEnumerator.cpp:164]  - 3-1-45.0 | Orbbec Gemini 2 Depth Camera
+[06/27 10:34:45.879762][debug][47479][UsbDeviceEnumerator.cpp:164]  - 3-1-45.2 | Orbbec Gemini 2 IR Camera
+[06/27 10:34:45.879768][debug][47479][UsbDeviceEnumerator.cpp:164]  - 3-1-45.4 | Orbbec Gemini 2 RGB Camera
+[06/27 10:34:45.879774][debug][47479][UsbDeviceEnumerator.cpp:164]  - 3-1-45.6 | Orbbec Gemini Data Channel
+[06/27 10:34:45.879779][debug][47479][UsbDeviceEnumerator.cpp:164]  - 3-1-45.7 | Orbbec Gemini 2 IMU
+[06/27 10:34:45.880015][info][47479][LinuxPal.cpp:110] Create PollingDeviceWatcher!
+[06/27 10:34:45.880056][debug][47479][UsbDeviceEnumerator.cpp:69] Found 1 device(s):
+[06/27 10:34:45.880070][debug][47479][UsbDeviceEnumerator.cpp:72]   - Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: AY3C73100HZ, connection: USB2.0
+[06/27 10:34:45.880085][info][47479][DeviceManager.cpp:15] Current found device(s): (1)
+[06/27 10:34:45.880099][info][47479][DeviceManager.cpp:24] 	- Name: Orbbec Gemini 2, PID: 0x0670, SN/ID: AY3C73100HZ, Connection: USB2.0
+[06/27 10:34:45.880113][debug][47479][DeviceManager.cpp:55] DeviceManager construct done!
