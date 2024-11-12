@@ -59,22 +59,22 @@ def placeObjectOn(object,left=0,right=0,forward=0,back=0,sel_num=1):
     if sel_num == 1:
         fr5_A.put([cup[0]+left-right,cup[1]-forward+back], "yn" , "3",obj_height = 0)
         #放置后先在y方向上后移夹爪，再上升夹爪，防止触碰到器具
-        fr5_A.MoveL(0,50,0)       
-        fr5_A.MoveL(0,0,200)
+        fr5_A.MoveLDelta(0,50,0)       
+        fr5_A.MoveLDelta(0,0,200)
     if sel_num == 2:
         fr5_B.put([cup[0]+left-right,cup[1]-forward+back], "yn" , "3",obj_height = 0)
         #放置后先在y方向上后移夹爪，再上升夹爪，防止触碰到器具
-        fr5_B.MoveL(0,50,0)       
-        fr5_B.MoveL(0,0,200)
+        fr5_B.MoveLDelta(0,50,0)       
+        fr5_B.MoveLDelta(0,0,200)
     if sel_num == 3:
-        fr5_A.MoveL(0,0,100)
+        fr5_A.MoveLDelta(0,0,100)
         fr5_A.put([cup[0]+left-right,cup[1]-forward+back], "yn" , "3",obj_height = 90)
-        fr5_A.MoveL(0,50,0)       
-        fr5_A.MoveL(0,0,200)    
+        fr5_A.MoveLDelta(0,50,0)       
+        fr5_A.MoveLDelta(0,0,200)    
     if sel_num == 4:
         fr5_B.put([cup[0]+left-right,cup[1]-forward+back], "xp" , "3",obj_height = 0)
-        fr5_B.MoveL(-50,0,0)       
-        fr5_B.MoveL(0,0,200)  
+        fr5_B.MoveLDelta(-50,0,0)       
+        fr5_B.MoveLDelta(0,0,200)  
     
 def pourwater(object,pour_num):
     '''
@@ -101,23 +101,23 @@ def stir(object):
     fr5_B.robot.MoveL([502.577, -423.656, 210.346, 90.0, 0.0, 0]
                     ,0
                     ,0)
-    fr5_B.MoveL(0,0,200)
+    fr5_B.MoveLDelta(0,0,200)
     fr5_B.robot.SetDO(4,1) 
     input("stiring...press enter to continue")
     fr5_B.robot.SetDO(4,0)
-    fr5_B.MoveL(0,0,-230)
-    fr5_B.MoveL(-100,0,0)
+    fr5_B.MoveLDelta(0,0,-230)
+    fr5_B.MoveLDelta(-100,0,0)
     
 def fire():
     logger.info('open lamp head')
     fr5_B.robot.MoveL([466.0,-297.0,238.0,126.0,2.0,90.0],0,0)
 
-    fr5_B.MoveL(z=-40)
+    fr5_B.MoveLDelta(z=-40)
     # # close gripper
     fr5_B.MoveGripper(1, 20, 50, 10, 10000, 1)
-    fr5_B.MoveL(x=10,z=100)
-    fr5_B.MoveL(y=-100)
-    fr5_B.MoveL(z=-170)
+    fr5_B.MoveLDelta(x=10,z=100)
+    fr5_B.MoveLDelta(y=-100)
+    fr5_B.MoveLDelta(z=-170)
     # open gripper
     fr5_B.MoveGripper(1, 50, 50, 10, 10000, 1)
     time.sleep(5)
@@ -137,7 +137,7 @@ def fire():
     fr5_B.robot.MoveL([-476.129, -333.229, 350.604, 90,0 ,0 ],
                       0,
                       0)
-    fr5_B.MoveL(0,-100,5)
+    fr5_B.MoveLDelta(0,-100,5)
     time.sleep(3)
     # close gripper fire!!!
     fr5_A.MoveGripper(1, 0, 50, 10, 10000, 1)
@@ -149,29 +149,29 @@ def fire():
                     ,0
                     ,0)
     
-    fr5_B.MoveL(0,200,0)
-    fr5_B.MoveL(0,0,-200)
+    fr5_B.MoveLDelta(0,200,0)
+    fr5_B.MoveLDelta(0,0,-200)
     fr5_B.robot.MoveL([-257.489,-383.409,176.573,90,0,0]
                       ,0
                       ,0)
-    fr5_B.MoveL(0,-40,0)
+    fr5_B.MoveLDelta(0,-40,0)
     time.sleep(5)
     input("heating....press enter to continue")
-    fr5_B.MoveL(0,200,0)
+    fr5_B.MoveLDelta(0,200,0)
     
 def closefire():
     fr5_B.MoveGripper(1, 50, 50, 10, 10000, 1)
     fr5_B.robot.MoveL([466.0,-397.0,228.0,126.0,2.0,90.0],0,0)
-    fr5_B.MoveL(x=20,z=-120)
+    fr5_B.MoveLDelta(x=20,z=-120)
     fr5_B.MoveGripper(1, 20, 50, 10, 10000, 1)
     time.sleep(2)
-    fr5_B.MoveL(z=200)
+    fr5_B.MoveLDelta(z=200)
     fr5_B.robot.MoveL([466.0,-297.0,238.0,126.0,2.0,90.0],0,0)
-    fr5_B.MoveL(z=-40)
-    fr5_B.MoveL(z=40)
-    fr5_B.MoveL(z=-40)
+    fr5_B.MoveLDelta(z=-40)
+    fr5_B.MoveLDelta(z=40)
+    fr5_B.MoveLDelta(z=-40)
     fr5_B.MoveGripper(1, 50, 50, 10, 10000, 1)
-    fr5_B.MoveL(z=100)
+    fr5_B.MoveLDelta(z=100)
     
     fr5_B.Go_to_start_zone()
 
@@ -230,8 +230,8 @@ if __name__ == '__main__':
     logger.info("左边机械臂拿漏斗")
     pick(funnel,sel_num=5)
     fr5_A.Go_to_start_zone(open=0)
-    fr5_A.MoveL(0,-200,0)
-    fr5_A.MoveL(0,0,-200)
+    fr5_A.MoveLDelta(0,-200,0)
+    fr5_A.MoveLDelta(0,0,-200)
     
     
     # 把粗盐水溶液倒入漏斗中

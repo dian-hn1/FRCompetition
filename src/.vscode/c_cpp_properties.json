@@ -6,8 +6,13 @@
         "limitSymbolsToIncludedHeaders": false
       },
       "includePath": [
+        "/home/wangzy/FR5_Xzx/catkin_ws/devel/include/**",
         "/home/wangzy/FR5_exp/fr5_gpt/devel/include/**",
         "/opt/ros/noetic/include/**",
+        "/home/wangzy/FR5_Xzx/catkin_ws/src/frcobot_ros-master/frcobot_camera/include/**",
+        "/home/wangzy/FR5_Xzx/catkin_ws/src/frcobot_ros-master/frcobot_gripper/include/**",
+        "/home/wangzy/FR5_Xzx/catkin_ws/src/frcobot_ros-master/frcobot_hw/include/**",
+        "/home/wangzy/FR5_Xzx/catkin_ws/src/frcobot_ros-master/ros_control_boilerplate/include/**",
         "/usr/include/**"
       ],
       "name": "ROS",

@@ -19,7 +19,6 @@ import os
 import time
 import copy
 import math
-import numpy as np
 import threading
 import rospy
 
@@ -39,37 +38,17 @@ dP1 = [1.000, 1.000, 1.000, 1.000, 1.000, 1.000]
 oP1 = [0.000, 0.000, 0.000, 0.000, 0.000, 0.000]
 a_bias = 220.0
 b_bias = 150.0
-weight_height = 38.0
+base_height = 0
 
 '''
 仪器区的初始位置
 '''
-liangtong_xy_input = [600, 0]  # 用于称量液体浓盐酸的量筒，对于B
-shaobei_xy_input = [600, -100]  # 用于称量固体C的烧杯，对于B
-sanjing_xy_input = [520, -300]  # 用于反应容器的三颈烧瓶，对于B
-liangtong_xy_output_B = [-500, -200]
-shaobei_xy_output = [-500, -300]
-sanjing_xy_output = [220, -560, 220]
-liangtong_xy_used = [600, 0]
-shaobei_xy_used = [600, -100]
-yindaoqi_xy = [570, -300]
-liangtong_xy_kmno4_givetoA = [-200, -700]  # 装有kmno4的量筒，需要递交给A，需要放在这个地方等待递交
-liangtong_xy_kmno4_getfromB = [200, -600]
-liangtong_xy_kmno4_puttopump = [-600, -300]
-liquid_weight_pos = [-700, -300, 15]  # 液体称量三维坐标
+
 
 '''
 关键姿势的J与P，做伺服到位用
 '''
-j1_auto_weight = [-36.870, -59.151, -137.756, -163.093, -126.870, 0.000]
-j2_auto_weight = [40.542, -57.601, -138.394, -164.005, -49.458, 0.000]
-j3_auto_weight = [-64.941, -59.151, -137.756, -163.094, 25.056, 0.001]
-j4_auto_weight = [-49.458, -55.125, -124.682, -180.193, -49.458, 0.000]  # 机械臂复位的J
-j5_auto_weight = [-119.608, -101.188, -110.403, -148.409, -119.608, 0.000]  # 机械臂A抓三颈烧瓶的先验关节角度
-j7_auto_weight = [-27.158, -90.814, -93.062, -174.026, -27.173, 0.384]  # 机械臂B抓引导器后放到水浴锅上方的过渡动作
-j8_auto_weight = [-84.385, -71.425, -117.697, -170.878, 5.615, 0.000]
 
-p6_auto_weight = [320.0, -340.0, 400.0, 90.0, 0.0, 0.0]
 
 class HNchemistry(fr5robot):
     def __init__(self, index=1):
@@ -151,9 +130,9 @@ class HNchemistry(fr5robot):
             position1[2] += 200
             self.robot.MoveCart(position1, 0, 0)
             time.sleep(2)
-            self.MoveL(0.0, 0.0, -200.0)
+            self.MoveLDelta(0.0, 0.0, -200.0)
             time.sleep(1)
-            self.MoveL(0.0, -100.0, 0.0)
+            self.MoveLDelta(0.0, -100.0, 0.0)
             time.sleep(1)
         elif catch_direction == "xn":
             position1 = start_catch_position
@@ -161,9 +140,9 @@ class HNchemistry(fr5robot):
             position1[2] += 200
             self.robot.MoveCart(position1, 0, 0)
             time.sleep(2)
-            self.MoveL(0.0, 0.0, -200.0)
+            self.MoveLDelta(0.0, 0.0, -200.0)
             time.sleep(1)
-            self.MoveL(-100, 0.0, 0.0)
+            self.MoveLDelta(-100, 0.0, 0.0)
             time.sleep(1)
         elif catch_direction == "xp":
             position1 = start_catch_position
@@ -171,9 +150,9 @@ class HNchemistry(fr5robot):
             position1[2] += 200
             self.robot.MoveCart(position1, 0, 0)
             time.sleep(2)
-            self.MoveL(0.0, 0.0, -200.0)
+            self.MoveLDelta(0.0, 0.0, -200.0)
             time.sleep(1)
-            self.MoveL(100, 0.0, 0.0)
+            self.MoveLDelta(100, 0.0, 0.0)
             time.sleep(1)
         elif catch_direction == "yp":
             position1 = start_catch_position
@@ -181,9 +160,9 @@ class HNchemistry(fr5robot):
             position1[2] += 200
             self.robot.MoveCart(position1, 0, 0)
             time.sleep(2)
-            self.MoveL(0.0, 0.0, -200.0)
+            self.MoveLDelta(0.0, 0.0, -200.0)
             time.sleep(1)
-            self.MoveL(0.0, 100.0, 0.0)
+            self.MoveLDelta(0.0, 100.0, 0.0)
             time.sleep(1)
 
         time.sleep(1)
@@ -196,23 +175,23 @@ class HNchemistry(fr5robot):
             time.sleep(3)
 
         if is_display:
-            self.MoveL(0.0, 0.0, 20.0, 20.0)
+            self.MoveLDelta(0.0, 0.0, 20.0, 20.0)
             time.sleep(1)
-            self.MoveL(0.0, 0.0, -20.0, 20.0)
+            self.MoveLDelta(0.0, 0.0, -20.0, 20.0)
             time.sleep(1)
             self.MoveGripper(1, 100, 50, 10, 10000, 1)  # open
             time.sleep(3)
-            self.MoveL(0.0, 0.0, 50.0, 20.0)
+            self.MoveLDelta(0.0, 0.0, 50.0, 20.0)
             self.Go_to_start_zone()
         elif int(sel_num) == 5:
-            self.MoveL(0.0, 0.0, 200.0, 20.0)
+            self.MoveLDelta(0.0, 0.0, 200.0, 20.0)
         else:
-            self.MoveL(0.0, 0.0, 20.0, 20.0)
+            self.MoveLDelta(0.0, 0.0, 20.0, 20.0)
             time.sleep(1)
 
         print("动作完成")
 
-    def put(self, start_catch_position, catch_direction, sel_num, is_force_sensor=False, obj_height=weight_height):
+    def put(self, start_catch_position, catch_direction, sel_num, is_force_sensor=False, obj_height=base_height):
         '''
         指定坐标放置指定物体，但是默认放置的高度可调，先写成这样吧，事情有点多，到时候再改
         预期效果： 机械臂回到起始区————运动到指定位置抓取物体————抬起展示抓取效果————松开夹爪回到结束区
@@ -286,28 +265,28 @@ class HNchemistry(fr5robot):
             position1[2] += 200
             self.robot.MoveCart(position1, 0, 0)
             time.sleep(2)
-            self.MoveL(0.0, 0.0, -200.0 + obj_height)
+            self.MoveLDelta(0.0, 0.0, -200.0 + obj_height)
             time.sleep(1)
         elif catch_direction == "xn":
             position1 = start_catch_position
             position1[2] += 200
             self.robot.MoveCart(position1, 0, 0)
             time.sleep(2)
-            self.MoveL(0.0, 0.0, -200.0 + obj_height)
+            self.MoveLDelta(0.0, 0.0, -200.0 + obj_height)
             time.sleep(1)
         elif catch_direction == "xp":
             position1 = start_catch_position
             position1[2] += 200
             self.robot.MoveCart(position1, 0, 0)
             time.sleep(2)
-            self.MoveL(0.0, 0.0, -200.0 + obj_height)
+            self.MoveLDelta(0.0, 0.0, -200.0 + obj_height)
             time.sleep(1)
         elif catch_direction == "yp":
             position1 = start_catch_position
             position1[2] += 200
             self.robot.MoveCart(position1, 0, 0)
             time.sleep(2)
-            self.MoveL(0.0, 0.0, -200.0 + obj_height)
+            self.MoveLDelta(0.0, 0.0, -200.0 + obj_height)
             time.sleep(1)
 
         time.sleep(1)
