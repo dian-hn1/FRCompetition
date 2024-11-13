@@ -250,11 +250,13 @@ class fr5robot:
             )
 
     def point_safe_move(self, start_catch_position, v=60.0, height=250.0, last_v=0):
-        '''
+        """
         机械臂安全运动到指定位置
-        '''
-        end_height = self.GetActualToolFlangePose()
+        """
+        if last_v == 0:
+            last_v = v
 
+        end_height = self.GetActualToolFlangePose()
         if end_height[2] < height:
             self.MoveLDelta(0.0, 0.0, max(height, start_catch_position[2]) - end_height[2], v)
         time.sleep(1)
@@ -267,9 +269,8 @@ class fr5robot:
         time.sleep(1)
 
         end_height = self.GetActualToolFlangePose(error_msg='failed to get end_height_from_sdk3')
-        if last_v == 0:
-            last_v = v
-        self.MoveL(0.0, 0.0, (start_catch_position[2] - end_height[2]), last_v)
+
+        self.MoveLDelta(0.0, 0.0, (start_catch_position[2] - end_height[2]), last_v)
 
     def pour(self, r, h, pour_position, pour_direction, sel_num, i=-2, max_angel=90, rate=100.0, v=70.0, upright=1, shake=1):
         '''
