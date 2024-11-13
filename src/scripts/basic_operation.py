@@ -121,6 +121,120 @@ class fr5robot:
         pos_now[2] += z
         ret = self.robot.MoveL(pos_now, 0, 0, blendR=-1.0)
         print('error_code', ret)
+        
+    def Safe_move(self, start_catch_position, dir, v=30.0):
+        '''
+        机械臂安全移动到指定位置
+        start_catch_position: 起始位置
+        dir: 方向
+        v: 速度
+        '''
+        temp_path = []
+        start_interpolation_path = []
+        
+        # 获取机械臂当前末端位置
+        start_position = self.robot.GetActualToolFlangePose(0)
+        # 进行处理 把首位0删除
+        start_position = start_position[-6:]
+        
+        # 保存初始路径点
+        start_interpolation_path += [start_position]
+        
+        # 添加路径点：将Z轴移动到250.0，保持其他坐标不变
+        temp_path = Add_path(
+            start_position,
+            start_position[0],
+            start_position[1],
+            250.0,
+            start_position[3],
+            start_position[4],
+            start_position[5],
+        )
+        start_interpolation_path += [temp_path]
+        
+        if dir == "yn":
+            # 添加路径点：沿Y轴移动到目标位置，保持Z轴高度为250.0
+            temp_path = Add_path(
+                temp_path,
+                start_catch_position[0],
+                start_catch_position[1] + 100.0,
+                250.0,
+                start_catch_position[3],
+                start_catch_position[4],
+                start_catch_position[5],
+            )
+            start_interpolation_path += [temp_path]
+            
+            # 添加路径点：沿Z轴下降到目标位置
+            temp_path = Add_path(
+                temp_path,
+                temp_path[0],
+                temp_path[1],
+                start_catch_position[2],
+                temp_path[3],
+                temp_path[4],
+                temp_path[5],
+            )
+            start_interpolation_path += [temp_path]
+            
+            # 添加路径点：沿Y轴返回100.0
+            temp_path = Add_path(
+                temp_path,
+                temp_path[0],
+                temp_path[1] - 100.0,
+                start_catch_position[2],
+                temp_path[3],
+                temp_path[4],
+                temp_path[5],
+            )
+            start_interpolation_path += [temp_path]
+        elif dir == "xn":
+            # 添加路径点：沿X轴移动到目标位置，保持Z轴高度为250.0
+            temp_path = Add_path(
+                temp_path,
+                start_catch_position[0] + 100.0,
+                start_catch_position[1],
+                250.0,
+                start_catch_position[3],
+                start_catch_position[4],
+                start_catch_position[5],
+            )
+            start_interpolation_path += [temp_path]
+            
+            # 添加路径点：沿Z轴下降到目标位置
+            temp_path = Add_path(
+                temp_path,
+                temp_path[0],
+                temp_path[1],
+                start_catch_position[2],
+                temp_path[3],
+                temp_path[4],
+                temp_path[5],
+            )
+            start_interpolation_path += [temp_path]
+            
+            # 添加路径点：沿X轴返回100.0
+            temp_path = Add_path(
+                temp_path,
+                temp_path[0] - 100.0,
+                temp_path[1],
+                start_catch_position[2],
+                temp_path[3],
+                temp_path[4],
+                temp_path[5],
+            )
+            start_interpolation_path += [temp_path]
+        else:
+            exit()
+        
+        # 打印路径点信息
+        print(start_interpolation_path)
+        
+        # 执行移动
+        for i in range(len(start_interpolation_path)):
+            self.robot.MoveCart(
+                start_interpolation_path[i], 0, 0, 0.0, 0.0, v, -1.0, -1
+            )
 
     def point_safe_move(self, start_catch_position, v=60.0, height=250.0, last_v=0):
         '''
@@ -179,6 +293,9 @@ class fr5robot:
         倾倒操作
         r: 容器半径
         h: 容器上平面离夹爪中心高度
+        pour_position: 倾倒位置
+        pour_direction: 倾倒方向
+        sel_num: 选择的容器，1---试管 2---烧杯 3---量筒 4---反应瓶 5---引导器 6---漏斗 7--蒸发皿
         i: 角度增量及方向
         max_angel: 最大旋转角度
         rate: 指令周期
@@ -214,11 +331,11 @@ class fr5robot:
 
         while True:
             if int(sel_num) == 1:
-                pour_position += [130.0]
+                pour_position += [130.0]    # 此处数据不全部准确，需要实地测量
                 pour_position += rxryrz
                 break
             elif int(sel_num) == 2:
-                pour_position += [65.0]
+                pour_position += [130.0]
                 pour_position += rxryrz
                 break
             elif int(sel_num) == 3:
@@ -231,6 +348,14 @@ class fr5robot:
                 break
             elif int(sel_num) == 5:
                 pour_position += [150.0]
+                pour_position += rxryrz
+                break
+            elif int(sel_num) == 6:
+                pour_position += [400.0]    
+                pour_position += rxryrz
+                break
+            elif int(sel_num) == 7:
+                pour_position += [450.0]    
                 pour_position += rxryrz
                 break
             else:

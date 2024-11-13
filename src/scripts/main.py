@@ -6,8 +6,6 @@
 import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
-# from serial.tools import list_ports
-# import serial
 import rospy
 import time
 from math import sin, cos, pi
@@ -27,15 +25,11 @@ b_bias = 150.0
 '''
 仪器区的初始位置
 '''
-solid_beaker_pos0 = [0.000, -700.000]    # X -1.888 Y -541.005 Z 71.539 RX 89.704 RY 0.519 RZ 2.157
-solid_beaker_pos1 = [0.000, -500.000]  
-pour_pos = [0.000, -400.000]
-funnel_pos = []
-
-'''
-关键姿势的J与P，做伺服���位用
-'''
-
+solid_beaker_pos = [-200, -500]  
+liquid_beaker_pos0 = [0, -700]
+liquid_beaker_pos1 = [200, -700]
+funnel_pos = [200, -500]
+dish_pos = [-200, -800]
 
 # 初始化化学实验对象
 def init():
@@ -44,17 +38,32 @@ def init():
     fr5_A = HNchemistry(1)
     fr5_B = HNchemistry(2)
     fr5_A.dou_go_start(fr5_B)
+    
+def coordinate_transform(A_cordiate):                         # 双臂坐标系转换方法
+    B_cordiate = [ - A_cordiate[0], 1200 - A_cordiate[1]]   # 1200是两机械臂基座的距离，待定
+    return B_cordiate
 
 if __name__ == "__main__":
     ############################# 开始 ###############################
     print("---------------FR5机械臂化学协作实验------------------\n") 
     init()
-    fr5_A.pick(solid_beaker_pos0, "xp", 2)
-    # fr5_A.MoveL(0.000, -600.000, 100.000)
-    # fr5_A.MoveLDelta(0.000, 100.000, 0.000)
-    # fr5_A.point_safe_move(pour_pos)
-    fr5_A.pour(5, 20, pour_pos, "xp", 2)
-    fr5_A.put(solid_beaker_pos1, "xp", 2)
+    fr5_A.pick(solid_beaker_pos, "xp", 2)
+    fr5_A.pour(5, 20, liquid_beaker_pos0, "xp", 2)
+    fr5_A.put(solid_beaker_pos, "xp", 2)
+    
+    # 待完成：搅拌溶解
+    
+    fr5_B.pick(coordinate_transform(funnel_pos), "xn", 6)    
+    fr5_B.Safe_move(coordinate_transform(liquid_beaker_pos1) + 300, "xn")    # 300是漏斗的高度
+    fr5_A.pick(liquid_beaker_pos0, "xp", 2)
+    fr5_A.pour(5, 20, liquid_beaker_pos1, "xp", 6)      
+    fr5_A.put(liquid_beaker_pos0, "xp", 2)
+    time.sleep(180)                                                        # 等待过滤完成
+    fr5_B.put(coordinate_transform(funnel_pos), "xn", 6)     
+    fr5_A.pick(liquid_beaker_pos1, "xp", 2)
+    fr5_A.pour(5, 20, dish_pos, "xp", 7)      
+    fr5_A.put(liquid_beaker_pos1, "xp", 2)
+    
     
     # ################### FR5B去仪器区分别抓取试管和烧杯 ########################
     # string = ' '.join(map(str, liangtong_xy_test))

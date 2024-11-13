@@ -391,7 +391,7 @@ class fr5robot:
             P1 = P1[0:3]
             P1 += [90.0, 0.0, 0.0]
             self.robot.MoveCart(P1, 0, 0, 0.0, 0.0, v, -1.0, -1)
-    
+
     #  蠕动泵控制 on = 0 关闭蠕动泵 on = 1 开启蠕动泵; block = 0 非阻塞 block = 1 阻塞
     #  index = 0 对应蠕动泵A，index = 1对应蠕动泵B
     #  速度采取百分制，范围[0~100]，100对应控制箱模拟量输出10V
@@ -641,7 +641,7 @@ class fr5robot:
                 else:
                     self.control_action = (self.k * error) / self.change_point + 18.0
                     self.robot.SetAO(1, self.control_action, 0)
-    
+
     def openjaw():
         OK=0
         ERROR=-1
@@ -663,7 +663,7 @@ class fr5robot:
         except Exception as e:
             print("Error1:", str(e))
         time.sleep(8)
-    
+
     def closejaw():
         OK=0
         ERROR=-1

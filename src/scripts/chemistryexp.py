@@ -27,7 +27,7 @@ sys.path.append('../')
 parent_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(parent_path)
 
-from fr5_init_new import fr5robot
+from scripts.basic_operation import fr5robot
 
 ##############################预设全局变量##################################
 '''
@@ -45,11 +45,6 @@ base_height = 0
 '''
 
 
-'''
-关键姿势的J与P，做伺服到位用
-'''
-
-
 class HNchemistry(fr5robot):
     def __init__(self, index=1):
         super().__init__(index)
@@ -61,7 +56,7 @@ class HNchemistry(fr5robot):
         预期效果： 机械臂回到起始区————运动到指定位置抓取物体————抬起展示抓取效果————松开夹爪回到结束区
         start_catch_position: 目标物体绝对xy坐标
         catch_direction: yn——y轴负方向  xn——x负方向 yp xp
-        sel_num:抓取的对: 1---试管 2---烧杯 3---量筒 4---反应瓶 5---引导器
+        sel_num:抓取的对: 1---试管 2---烧杯 3---量筒 4---反应瓶 5---引导器 6---漏斗
         is_force_sensor:末端是否有力传感器
         is_display:是否为演示抓取，如果是，机械臂会自动复位
         '''
@@ -114,6 +109,10 @@ class HNchemistry(fr5robot):
                 break
             elif int(sel_num) == 5:
                 start_catch_position += [150.0]
+                start_catch_position += rxryrz
+                break
+            elif int(sel_num) == 6:
+                start_catch_position += [300.0]
                 start_catch_position += rxryrz
                 break
             else:
@@ -251,6 +250,10 @@ class HNchemistry(fr5robot):
                 break
             elif int(sel_num) == 5:
                 start_catch_position += [135.0]
+                start_catch_position += rxryrz
+                break
+            elif int(sel_num) == 6:
+                start_catch_position += [300.0]
                 start_catch_position += rxryrz
                 break
             else:
