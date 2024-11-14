@@ -303,7 +303,5 @@ class HNchemistry(fr5robot):
 
         self.MoveLDelta(0.0, 0.0, 300.0)
 
-        self.MoveLDelta(0.0, 0.0, 300.0)
-
         print("put动作完成")
 
