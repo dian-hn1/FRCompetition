@@ -300,7 +300,9 @@ class HNchemistry(fr5robot):
         else:
             self.MoveGripper(1, 100, 50, 10, 10000, 1)  # open
             time.sleep(3)
-            
+
+        self.MoveLDelta(0.0, 0.0, 300.0)
+
         self.MoveLDelta(0.0, 0.0, 300.0)
 
         print("put动作完成")

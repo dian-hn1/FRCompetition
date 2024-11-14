@@ -26,7 +26,7 @@ b_bias = 150.0
 '''
 仪器区的初始位置
 '''
-solid_beaker_pos = [-300, -300]  
+solid_beaker_pos = [-300, -300]
 liquid_beaker_pos0 = [200, -400]
 liquid_beaker_pos1 = [0, -600]
 funnel_pos = [200, -800]
@@ -49,20 +49,20 @@ if __name__ == "__main__":
     print("---------------FR5机械臂化学协作实验------------------\n") 
     init()
     fr5_A.pick(copy.deepcopy(solid_beaker_pos), "xp", 2)
-    fr5_A.pour(5, 20, copy.deepcopy(liquid_beaker_pos0), "xp", 2, upright=0, max_angel=120.0, shake=1) 
+    fr5_A.pour(5, 20, copy.deepcopy(liquid_beaker_pos0), "xp", 2, upright=0, max_angel=120.0, shake=1)
     fr5_A.put(copy.deepcopy(solid_beaker_pos), "xp", 2)
     
     # 待完成：搅拌溶解
     
-    fr5_B.pick(coordinate_transform(funnel_pos), "yn", 6)  
+    fr5_B.pick(coordinate_transform(funnel_pos), "yn", 6)
     fr5_B.Safe_move(coordinate_transform(liquid_beaker_pos1) + [225], "yn")    # 增加是漏斗悬空的高度
     fr5_A.pick(copy.deepcopy(liquid_beaker_pos0), "xp", 2)
-    fr5_A.pour(5, 20, copy.deepcopy(liquid_beaker_pos1), "yn", 6, max_angel=110.0, shake=0)      
+    fr5_A.pour(5, 20, copy.deepcopy(liquid_beaker_pos1), "yn", 6, max_angel=110.0, shake=0)
     fr5_A.put(copy.deepcopy(liquid_beaker_pos0), "xp", 2)
     time.sleep(5)                                                        # 等待过滤完成
-    fr5_B.put(coordinate_transform(funnel_pos), "yn", 6)     
+    fr5_B.put(coordinate_transform(funnel_pos), "yn", 6)
     fr5_A.pick(copy.deepcopy(liquid_beaker_pos1), "yn", 2)
-    fr5_A.pour(5, 20, copy.deepcopy(dish_pos), "yn", 7, max_angel=110.0, shake=0)      
+    fr5_A.pour(5, 20, copy.deepcopy(dish_pos), "yn", 7, max_angel=110.0, shake=0)
     fr5_A.put(copy.deepcopy(liquid_beaker_pos1), "yn", 2)
     
     

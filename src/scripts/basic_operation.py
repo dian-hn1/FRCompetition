@@ -232,7 +232,7 @@ class fr5robot:
                 rxryrz[2],
             )
             start_interpolation_path += [temp_path]
-            
+
             # 添加路径点：沿Z轴下降到目标位置
             temp_path = Add_path(
                 temp_path,
@@ -244,7 +244,7 @@ class fr5robot:
                 temp_path[5],
             )
             start_interpolation_path += [temp_path]
-            
+
             # 添加路径点：沿Y轴前进100.0
             temp_path = Add_path(
                 temp_path,
@@ -269,7 +269,7 @@ class fr5robot:
                 rxryrz[2],
             )
             start_interpolation_path += [temp_path]
-            
+
             # 添加路径点：沿Z轴下降到目标位置
             temp_path = Add_path(
                 temp_path,
@@ -281,7 +281,7 @@ class fr5robot:
                 temp_path[5],
             )
             start_interpolation_path += [temp_path]
-            
+
             # 添加路径点：沿X轴前进100.0
             temp_path = Add_path(
                 temp_path,
@@ -305,7 +305,7 @@ class fr5robot:
             self.robot.MoveCart(
                 start_interpolation_path[i], 0, 0, 0.0, 0.0, v, -1.0, -1
             )
-            
+
         print("save_move动作完成")
 
     def point_safe_move(self, start_catch_position, v=60.0, height=250.0, last_v=0):
@@ -394,11 +394,11 @@ class fr5robot:
                 pour_position += rxryrz
                 break
             elif int(sel_num) == 6:
-                pour_position += [340.0]    
+                pour_position += [340.0]
                 pour_position += rxryrz
                 break
             elif int(sel_num) == 7:
-                pour_position += [380.0]    
+                pour_position += [380.0]
                 pour_position += rxryrz
                 break
             else:
@@ -536,3 +536,32 @@ class fr5robot:
             获取机械臂末端位置，也可用于判断动作是否完成
         '''
         return invoke_api(lambda: self.robot.GetActualToolFlangePose(0), block, error_msg)
+
+def invoke_api(api_lambda, block=True, error_msg='failed to invoke api'):
+    """
+        调用API接口
+
+        api_lambda 使用举例：
+        api_lambda = lambda: self.robot.GetActualToolFlangePose(0)
+
+        api_lambda: API接口
+        block: 是否阻塞
+        error_msg: 错误信息
+    """
+    raw_data = api_lambda()
+    # raw_data is a tuple, (ret, data), if no error
+    while (not isinstance(raw_data, tuple) or raw_data[0] != 0) \
+            and block:
+        # The sdk returns an error code
+        print(f'ret: {raw_data[0] if isinstance(raw_data, tuple) else raw_data}. {error_msg}')
+        raw_data = api_lambda()
+        time.sleep(0.25)
+
+    if isinstance(raw_data, tuple):
+        # 返回数据或者错误码
+        return raw_data[1] \
+            if (len(raw_data) == 2 and raw_data[0] == 0) \
+            else raw_data[0]
+    else:
+        print(error_msg)
+        return raw_data
