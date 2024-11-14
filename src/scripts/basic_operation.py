@@ -30,17 +30,20 @@ def invoke_api(api_lambda, block=True, error_msg='failed to invoke api'):
         error_msg: 错误信息
     """
     raw_data = api_lambda()
-    # raw_data is a tuple, [ret, data], if no error
-    while (raw_data is not tuple or raw_data[0] != 0) and block:
+    # raw_data is a tuple, (ret, data), if no error
+    while (not isinstance(raw_data, tuple) or raw_data[0] != 0) \
+            and block:
         # The sdk returns an error code
-        print(f'ret: {raw_data[0] if raw_data is tuple else raw_data}. {error_msg}')
+        print(f'ret: {raw_data[0] if isinstance(raw_data, tuple) else raw_data}. {error_msg}')
         raw_data = api_lambda()
         time.sleep(0.25)
-    if raw_data is tuple and raw_data.length == 2:
-        return raw_data[1]  # 返回数据
+
+    if isinstance(raw_data, tuple):
+        # 返回数据或者错误码
+        return raw_data[1] \
+            if (len(raw_data) == 2 and raw_data[0] == 0) \
+            else raw_data[0]
     else:
-        if raw_data is tuple:
-            raw_data = raw_data[0]  # 返回错误码
         print(error_msg)
         return raw_data
 
