@@ -112,7 +112,7 @@ class HNchemistry(fr5robot):
                 start_catch_position += rxryrz
                 break
             elif int(sel_num) == 6:
-                start_catch_position += [300.0]
+                start_catch_position += [160.0]
                 start_catch_position += rxryrz
                 break
             else:
@@ -188,7 +188,7 @@ class HNchemistry(fr5robot):
             self.MoveLDelta(0.0, 0.0, 20.0, 20.0)
             time.sleep(1)
 
-        print("动作完成")
+        print("pick动作完成")
 
     def put(self, start_catch_position, catch_direction, sel_num, is_force_sensor=False, obj_height=base_height):
         '''
@@ -253,7 +253,7 @@ class HNchemistry(fr5robot):
                 start_catch_position += rxryrz
                 break
             elif int(sel_num) == 6:
-                start_catch_position += [300.0]
+                start_catch_position += [160.0]
                 start_catch_position += rxryrz
                 break
             else:
@@ -300,6 +300,8 @@ class HNchemistry(fr5robot):
         else:
             self.MoveGripper(1, 100, 50, 10, 10000, 1)  # open
             time.sleep(3)
+            
+        self.MoveLDelta(0.0, 0.0, 300.0)
 
-        print("动作完成")
+        print("put动作完成")
 

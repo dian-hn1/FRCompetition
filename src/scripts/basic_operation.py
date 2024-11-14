@@ -16,8 +16,12 @@ import rospy
 from std_msgs.msg import Int32
 import threading
 import numpy as np
+from utils.tools import Add_path
 
+a_bias = 220.0
 b_bias = 150.0
+
+real_bias = b_bias
 
 class fr5robot:
     def __init__(self, index=1):
@@ -135,8 +139,7 @@ class fr5robot:
         # 获取机械臂当前末端位置
         start_position = self.robot.GetActualToolFlangePose(0)
         # 进行处理 把首位0删除
-        start_position = start_position[-6:]
-        
+        start_position = start_position[1]
         # 保存初始路径点
         start_interpolation_path += [start_position]
         
@@ -145,7 +148,7 @@ class fr5robot:
             start_position,
             start_position[0],
             start_position[1],
-            250.0,
+            300.0,
             start_position[3],
             start_position[4],
             start_position[5],
@@ -153,15 +156,16 @@ class fr5robot:
         start_interpolation_path += [temp_path]
         
         if dir == "yn":
+            rxryrz = [90.0, 0.0, 0.0]
             # 添加路径点：沿Y轴移动到目标位置，保持Z轴高度为250.0
             temp_path = Add_path(
                 temp_path,
                 start_catch_position[0],
-                start_catch_position[1] + 100.0,
-                250.0,
-                start_catch_position[3],
-                start_catch_position[4],
-                start_catch_position[5],
+                start_catch_position[1] + real_bias + 100.0,
+                300.0,
+                rxryrz[0],
+                rxryrz[1],
+                rxryrz[2],
             )
             start_interpolation_path += [temp_path]
             
@@ -189,15 +193,16 @@ class fr5robot:
             )
             start_interpolation_path += [temp_path]
         elif dir == "xn":
+            rxryrz = [90.0, 0.0, -90.0]
             # 添加路径点：沿X轴移动到目标位置，保持Z轴高度为250.0
             temp_path = Add_path(
                 temp_path,
-                start_catch_position[0] + 100.0,
+                start_catch_position[0] + real_bias + 100.0,
                 start_catch_position[1],
-                250.0,
-                start_catch_position[3],
-                start_catch_position[4],
-                start_catch_position[5],
+                300.0,
+                rxryrz[0],
+                rxryrz[1],
+                rxryrz[2],
             )
             start_interpolation_path += [temp_path]
             
@@ -224,10 +229,85 @@ class fr5robot:
                 temp_path[5],
             )
             start_interpolation_path += [temp_path]
+        elif dir == "yp":
+            rxryrz = [90.0, 0.0, -179.9]
+            # 添加路径点：沿Y轴移动到目标位置，保持Z轴高度为250.0
+            temp_path = Add_path(
+                temp_path,
+                start_catch_position[0],
+                start_catch_position[1] - real_bias - 100.0,
+                300.0,
+                rxryrz[0],
+                rxryrz[1],
+                rxryrz[2],
+            )
+            start_interpolation_path += [temp_path]
+            
+            # 添加路径点：沿Z轴下降到目标位置
+            temp_path = Add_path(
+                temp_path,
+                temp_path[0],
+                temp_path[1],
+                start_catch_position[2],
+                temp_path[3],
+                temp_path[4],
+                temp_path[5],
+            )
+            start_interpolation_path += [temp_path]
+            
+            # 添加路径点：沿Y轴前进100.0
+            temp_path = Add_path(
+                temp_path,
+                temp_path[0],
+                temp_path[1] + 100.0,
+                start_catch_position[2],
+                temp_path[3],
+                temp_path[4],
+                temp_path[5],
+            )
+            start_interpolation_path += [temp_path]
+        elif dir == "xp":
+            rxryrz = [90.0, 0.0, 90.0]
+            # 添加路径点：沿X轴移动到目标位置，保持Z轴高度为250.0
+            temp_path = Add_path(
+                temp_path,
+                start_catch_position[0] - real_bias - 100.0,
+                start_catch_position[1],
+                300.0,
+                rxryrz[0],
+                rxryrz[1],
+                rxryrz[2],
+            )
+            start_interpolation_path += [temp_path]
+            
+            # 添加路径点：沿Z轴下降到目标位置
+            temp_path = Add_path(
+                temp_path,
+                temp_path[0],
+                temp_path[1],
+                start_catch_position[2],
+                temp_path[3],
+                temp_path[4],
+                temp_path[5],
+            )
+            start_interpolation_path += [temp_path]
+            
+            # 添加路径点：沿X轴前进100.0
+            temp_path = Add_path(
+                temp_path,
+                temp_path[0] + 100.0,
+                temp_path[1],
+                start_catch_position[2],
+                temp_path[3],
+                temp_path[4],
+                temp_path[5],
+            )
+            start_interpolation_path += [temp_path]
         else:
             exit()
         
         # 打印路径点信息
+        print("路径点信息")
         print(start_interpolation_path)
         
         # 执行移动
@@ -235,6 +315,8 @@ class fr5robot:
             self.robot.MoveCart(
                 start_interpolation_path[i], 0, 0, 0.0, 0.0, v, -1.0, -1
             )
+            
+        print("save_move动作完成")
 
     def point_safe_move(self, start_catch_position, v=60.0, height=250.0, last_v=0):
         '''
@@ -335,7 +417,7 @@ class fr5robot:
                 pour_position += rxryrz
                 break
             elif int(sel_num) == 2:
-                pour_position += [130.0]
+                pour_position += [170.0]
                 pour_position += rxryrz
                 break
             elif int(sel_num) == 3:
@@ -351,11 +433,11 @@ class fr5robot:
                 pour_position += rxryrz
                 break
             elif int(sel_num) == 6:
-                pour_position += [400.0]    
+                pour_position += [340.0]    
                 pour_position += rxryrz
                 break
             elif int(sel_num) == 7:
-                pour_position += [450.0]    
+                pour_position += [380.0]    
                 pour_position += rxryrz
                 break
             else:
@@ -507,4 +589,6 @@ class fr5robot:
             else:
                 P1 = P1[0:3] + [90.0, 0.0, 0.0]
             self.robot.MoveCart(P1, 0, 0, 0.0, 0.0, v, -1.0, -1)
+            
+        print("pour动作完成")
 

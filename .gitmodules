@@ -1,0 +1,3 @@
+[submodule "src/scripts/ROS-TCP-Endpoint"]
+	path = src/scripts/ROS-TCP-Endpoint
+	url = https://github.com/Unity-Technologies/ROS-TCP-Endpoint
