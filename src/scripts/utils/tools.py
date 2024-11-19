@@ -39,3 +39,18 @@ trajectory = [bezier_curve(ti, start_point, control_point, end_point) for ti in 
 # plt.title('Bezier Curve')
 # plt.grid(True)
 # plt.show()
+
+def Add_path(start_position, x, y, z, rx, ry, rz):
+    """
+    生成新的路径点
+    :param start_position: 当前起始位置
+    :param x: 新路径点的X坐标
+    :param y: 新路径点的Y坐标
+    :param z: 新路径点的Z坐标
+    :param rx: 新路径点的RX旋转角度
+    :param ry: 新路径点的RY旋转角度
+    :param rz: 新路径点的RZ旋转角度
+    :return: 新的路径点
+    """
+    new_path = [x, y, z, rx, ry, rz]
+    return new_path
