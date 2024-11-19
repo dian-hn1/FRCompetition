@@ -31,7 +31,7 @@ class fr5robot:
 
         # 初始化变量
         if index == 1:
-            self.robot = Robot.RPC('192.168.59.6')
+            self.robot = Robot.RPC('192.168.59.2')
         elif index == 2:
             self.robot = Robot.RPC('192.168.58.6')
         self.index = index
@@ -331,7 +331,7 @@ class fr5robot:
 
         self.MoveLDelta(0.0, 0.0, (start_catch_position[2] - end_height[2]), last_v)
 
-    def pour(self, r, h, pour_position, pour_direction, sel_num, i=-2, max_angel=90, rate=100.0, v=70.0, upright=1, shake=1):
+    def pour(self, r, h, pour_position, pour_direction, sel_num, i=-1.5, max_angel=90, rate=100.0, v=70.0, upright=1, shake=1):
         '''
         倾倒操作
         r: 容器半径
@@ -378,7 +378,7 @@ class fr5robot:
                 pour_position += rxryrz
                 break
             elif int(sel_num) == 2:
-                pour_position += [170.0]
+                pour_position += [185.0]
                 pour_position += rxryrz
                 break
             elif int(sel_num) == 3:
@@ -467,9 +467,17 @@ class fr5robot:
         phi = np.arctan(h / r)
         l = np.pi * R / 180  # 弧长（x理论增量）
         # 工具坐标笛卡尔增量
+        # n_pos = [
+        #     float(2.2 * l * np.sin(phi) * np.sign(i)) * rate,
+        #     float(2.2 * l * np.cos(phi)) * rate,
+        #     0.0,
+        #     0.0,
+        #     0.0,
+        #     0.0,
+        # ]
         n_pos = [
-            float(2.2 * l * np.sin(phi) * np.sign(i)) * rate,
-            float(2.2 * l * np.cos(phi)) * rate,
+            i * rate * np.pi/180 * h,
+            0.0,
             0.0,
             0.0,
             0.0,
@@ -492,6 +500,8 @@ class fr5robot:
 
             # 更新差值
             joint_pos_difference = joint_pos[5] - J1[5]
+        
+        time.sleep(2)
 
         joint_pos = invoke_api(lambda: self.robot.GetActualJointPosDegree(0), error_msg='failed to get joint_pos from sdk')
         pos_record = invoke_api(lambda: self.robot.GetActualTCPPose(0), error_msg='failed to get pos record from sdk')
